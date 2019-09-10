@@ -1,0 +1,2 @@
+module Users::StationsHelper
+end
