@@ -66,6 +66,11 @@ ActiveRecord::Schema.define(version: 2019_09_11_090111) do
     t.string "first_name", default: "", null: false
     t.string "family_name_kana", default: "", null: false
     t.string "first_name_kana", default: "", null: false
+    t.string "telephone_number", default: "", null: false
+    t.string "postal_code", default: "", null: false
+    t.string "address", default: "", null: false
+    t.string "image"
+    t.text "introduction"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

@@ -12,6 +12,11 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
       t.string :family_name_kana,   null: false, default: ""
       t.string :first_name_kana,  null: false, default: ""
       #default: ""は、nullの時の文字列を保障
+      t.string :telephone_number, null: false, default: ""
+      t.string :postal_code, null: false, default: ""
+      t.string :address, null: false, default: ""
+      t.string :image
+      t.text :introduction      
 
       ## Recoverable
       t.string   :reset_password_token
