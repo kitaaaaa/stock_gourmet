@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_15_103141) do
+ActiveRecord::Schema.define(version: 2019_09_16_025630) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,23 +18,33 @@ ActiveRecord::Schema.define(version: 2019_09_15_103141) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "restaurant_id"
+    t.index ["restaurant_id"], name: "index_favorites_on_restaurant_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "genres", force: :cascade do |t|
+    t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "menus", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.integer "restaurant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "relationships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "follow_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["follow_id"], name: "index_relationships_on_follow_id"
+    t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "restaurant_tags", force: :cascade do |t|
@@ -48,27 +58,47 @@ ActiveRecord::Schema.define(version: 2019_09_15_103141) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name", default: "", null: false
-    t.string "genre", default: "", null: false
-    t.string "menu", default: ""
+    t.integer "genre_id", null: false
+    t.string "menu"
     t.integer "budget"
     t.string "postal_code"
     t.text "address"
-    t.string "station", default: "", null: false
+    t.integer "station_id", null: false
+    t.integer "restaurant_tag_id"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "station_trains", force: :cascade do |t|
+    t.integer "station_id"
+    t.integer "train_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["station_id"], name: "index_station_trains_on_station_id"
+    t.index ["train_id"], name: "index_station_trains_on_train_id"
+  end
+
   create_table "stations", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.integer "station_train_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.integer "user_tag_id"
+    t.integer "false"
+    t.integer "restaurant_tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "trains", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.integer "station_train_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -96,6 +126,7 @@ ActiveRecord::Schema.define(version: 2019_09_15_103141) do
     t.text "address", default: "", null: false
     t.string "image"
     t.text "introduction"
+    t.integer "user_tag_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

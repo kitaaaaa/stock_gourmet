@@ -1,0 +1,31 @@
+<div>
+	<h1><%= @restaurant.name %></h1>
+	<div>
+		<table>
+		<tr>
+			<td>ジャンル：</td>
+			<td><%= @restaurant.genre %></td>
+		</tr>
+		<tr>
+			<td>最寄り駅：</td>
+			<td><%= @restaurant.station %></td>
+		</tr>
+		<tr>
+			<td>予算：</td>
+			<td><%= @restaurant.budget %></td>
+		</tr>
+		</table>
+		<div class="clearfix">
+			<p style="float: left;">タグ：</p>
+			<p style="border: solid 1px; float: left;">ラーメン</p>
+			<p style="border: solid 1px; float: left;">ラーメン</p>
+			<p style="border: solid 1px; float: left;">ラーメン</p>
+		</div>
+		<p><%= @restaurant.postal_code %> <%= @restaurant.address %></p>
+		<img src="">
+
+		<%= link_to '編集', edit_users_restaurant_path(@restaurant.id) %>
+		<%= link_to 'トップ画面へ戻る', root_path %>
+	</div>
+	<% end %>
+</div>

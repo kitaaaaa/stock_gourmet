@@ -13,13 +13,13 @@
 				</div>
 
 				<div>
-        			<%= f.label :genre, "ジャンル" %><br />
-        			<%= f.select :genre, autofocus: true, autocomplete: "genre" %>
+        			<%= f.label :genre_id, "ジャンル" %><br />
+        			<%= f.collection_select :genre_id, Genre.all, :id,:name %>
         		</div>
 
         		<div>
 					<%= f.label :menu, "メニュー" %><br />
-					<%= f.text_field :menu, autofocus: true, autocomplete: "menu" %>
+					<%= f.text_field :menu, autofocus: true, autocomplete: "メニュー" %>
 				</div>
 
         		<div>
@@ -38,8 +38,8 @@
         		</div>
 
         		<div>
-        			<%= f.label :station, "最寄り駅" %><br />
-        			<%= f.text_field :station, autofocus: true %>
+        			<%= f.label :station_id, "最寄り駅" %><br />
+        			<%= f.collection_select :station_id, Station.all, :id, :name %>
         		</div>
 
         		<!-- お気に入り区分も追加する、フォームはselect -->

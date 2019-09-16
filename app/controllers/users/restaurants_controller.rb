@@ -11,6 +11,9 @@ class Users::RestaurantsController < ApplicationController
 
 	def new
 		@restaurant = Restaurant.new
+		@menu = Menu.new
+		@station = Station.new
+		@genre = Genre.new
 	end
 
 	def create
@@ -38,6 +41,6 @@ class Users::RestaurantsController < ApplicationController
 
 	private
 	def restaurant_params
-		params.require(:restaurant).permit(:name, :menu_id, :genre_id, :station_id, :postal_code, :address, :latitude, :longitude, :budget)		
+		params.require(:restaurant).permit(:name, :menu, :genre_id, :station_id, :postal_code, :address, :latitude, :longitude, :budget)		
 	end
 end
