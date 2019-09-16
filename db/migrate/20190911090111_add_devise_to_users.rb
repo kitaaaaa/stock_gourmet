@@ -14,9 +14,10 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
       #default: ""は、nullの時の文字列を保障
       t.string :telephone_number, null: false, default: ""
       t.string :postal_code, null: false, default: ""
-      t.string :address, null: false, default: ""
+      t.text :address, null: false, default: ""
       t.string :image
-      t.text :introduction      
+      t.text :introduction 
+      t.integer :user_tag_id     
 
       ## Recoverable
       t.string   :reset_password_token

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_090111) do
+ActiveRecord::Schema.define(version: 2019_09_15_103141) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -37,7 +37,23 @@ ActiveRecord::Schema.define(version: 2019_09_11_090111) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "restaurant_tags", force: :cascade do |t|
+    t.integer "restaurant_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_restaurant_tags_on_restaurant_id"
+    t.index ["tag_id"], name: "index_restaurant_tags_on_tag_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "genre", default: "", null: false
+    t.string "menu", default: ""
+    t.integer "budget"
+    t.string "postal_code"
+    t.text "address"
+    t.string "station", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,6 +73,15 @@ ActiveRecord::Schema.define(version: 2019_09_11_090111) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_tags", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_user_tags_on_tag_id"
+    t.index ["user_id"], name: "index_user_tags_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -68,7 +93,7 @@ ActiveRecord::Schema.define(version: 2019_09_11_090111) do
     t.string "first_name_kana", default: "", null: false
     t.string "telephone_number", default: "", null: false
     t.string "postal_code", default: "", null: false
-    t.string "address", default: "", null: false
+    t.text "address", default: "", null: false
     t.string "image"
     t.text "introduction"
     t.string "reset_password_token"

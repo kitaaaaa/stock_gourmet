@@ -1,0 +1,52 @@
+<div class="container min-height">
+	<div class="row">
+    	<div class="col-sm-2"></div>
+    	<div class="col-sm-8" style="background-color: orange;">
+    		<h1>店の新規登録</h1>
+
+			<%= form_for(@restaurant, url: users_restaurants_path) do |f| %>
+
+
+				<div>
+					<%= f.label :name, "店名" %><br />
+					<%= f.text_field :name, autofocus: true, require: true %>
+				</div>
+
+				<div>
+        			<%= f.label :genre, "ジャンル" %><br />
+        			<%= f.select :genre, autofocus: true, autocomplete: "genre" %>
+        		</div>
+
+        		<div>
+					<%= f.label :menu, "メニュー" %><br />
+					<%= f.text_field :menu, autofocus: true, autocomplete: "menu" %>
+				</div>
+
+        		<div>
+        			<%= f.label :budget, "予算" %><br />
+    				<%= f.number_field :budget, autofocus: true %>
+    			</div>
+
+    			<div>
+        			<%= f.label :postal_code, "郵便番号" %><br />
+    				<%= f.text_field :postal_code, autofocus: true %>
+    			</div>
+
+    			<div>
+        			<%= f.label :address, "住所" %><br />
+        			<%= f.text_area :address, autofocus: true %>
+        		</div>
+
+        		<div>
+        			<%= f.label :station, "最寄り駅" %><br />
+        			<%= f.text_field :station, autofocus: true %>
+        		</div>
+
+        		<!-- お気に入り区分も追加する、フォームはselect -->
+        		<div>
+        			<%= f.submit "登録" %>
+        		</div>
+			<% end %>
+    	</div>
+	</div>
+</div>
