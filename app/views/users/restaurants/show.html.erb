@@ -26,6 +26,29 @@
 
 		<%= link_to '編集', edit_users_restaurant_path(@restaurant.id) %>
 		<%= link_to 'トップ画面へ戻る', root_path %>
-	</div>
-	<% end %>
 </div>
+		
+<div>
+<div id="map"></div>
+
+<style>
+#map{
+  height: 400px;
+}
+</style>
+
+<script>
+  let mapInstance //この変数はmap.js.erbでも使うのでタイプミスに注意
+
+  function initMap(){
+  	let map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKo2dKiuRl-Jz67szLgRlRZFpGJOugF7g&callback=initMap" async defer></script>
+	</div>
+</div>
+
+<!-- <script src="https://maps.googleapis.com/maps/api&/js?key=AIzaSyAKo2dKiuRl-Jz67szLgRlRZFpGJOugF7g&callback=initMap" async defer></script> -->
