@@ -62,17 +62,17 @@
 	<h2>the best お気に入りトップ10</h2>
 	<% @restaurants.each do |restaurant| %>
 	<div>
-		<h3>rank, <%= link_to restaurant.name, users_restaurant(restaurant.id) %></h3>
+		<h3>rank, <%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h3>
 		<table>
 		<tr>
 			<td>最寄り駅：</td>
-			<td><%= restaurant.station %></td>
+			<td><%= restaurant.station.name %></td>
 			<td>予算：</td>
 			<td><%= restaurant.budget %></td>
 		</tr>
 		<tr>
 			<td>ジャンル：</td>
-			<td><%= restaurant.genre %></td>
+			<td><%= restaurant.genre.name %></td>
 		</table>
 		<div class="clearfix">
 			<p style="float: left;">タグ：</p>

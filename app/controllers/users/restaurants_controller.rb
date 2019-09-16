@@ -17,8 +17,6 @@ class Users::RestaurantsController < ApplicationController
 	end
 
 	def create
-		p "@@@@@@@@@@@@@@@@@"
-		p restaurant_params
 		@restaurant = Restaurant.new(restaurant_params)
 		if @restaurant.save
 			redirect_to root_path
