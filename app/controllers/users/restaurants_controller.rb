@@ -7,6 +7,7 @@ class Users::RestaurantsController < ApplicationController
 
 	def show
 		@restaurant = Restaurant.find(params[:id])
+
 	end
 
 	def new
@@ -19,18 +20,20 @@ class Users::RestaurantsController < ApplicationController
 	def create
 		@restaurant = Restaurant.new(restaurant_params)
 		if @restaurant.save
-			redirect_to root_path
+			redirect_to users_restaurant_path(@restaurant.id)
 		else
 			redirect_to new_users_restaurant_path
 		end
 	end
 
 	def edit
-		
+		@restaurant = Restaurant.find(params[:id])
 	end
 
 	def update
-		
+		@restaurant = Restaurant.find(params[:id])
+		@restaurant.update(restaurant_params)
+			redirect_to users_restaurant_path(@restaurant.id)
 	end
 
 	def destroy

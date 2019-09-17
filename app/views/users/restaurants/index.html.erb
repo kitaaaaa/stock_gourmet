@@ -68,7 +68,7 @@
 			<td>最寄り駅：</td>
 			<td><%= restaurant.station.name %></td>
 			<td>予算：</td>
-			<td><%= restaurant.budget %></td>
+			<td>￥<%= restaurant.budget %></td>
 		</tr>
 		<tr>
 			<td>ジャンル：</td>
@@ -80,7 +80,7 @@
 			<p style="border: solid 1px; float: left;">ラーメン</p>
 			<p style="border: solid 1px; float: left;">ラーメン</p>
 		</div>
-		<p><%= restaurant.postal_code %> <%= restaurant.address %></p>
+		<p>〒<%= restaurant.postal_code %> <%= restaurant.address %></p>
 		<img src="">
 	</div>
 	<% end %>
