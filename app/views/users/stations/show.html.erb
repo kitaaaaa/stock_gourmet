@@ -1,0 +1,35 @@
+<div>map</div>
+<img src="">
+
+<h1><%= @station.name %>駅</h1>
+
+<h2>交通アクセス</h2>
+<% @station.station_trains.each do |s_t| %>
+	<p><%= s_t.train.name %></p>
+<% end %>
+
+<h2><%= @station.name %>の店たち</h2>
+	<% @station.restaurants.each do |restaurant| %>
+	<div>
+		<h3>rank, <%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h3>
+		<table>
+		<tr>
+			<td>最寄り駅：</td>
+			<td><%= restaurant.station.name %></td>
+			<td>予算：</td>
+			<td>￥<%= restaurant.budget %></td>
+		</tr>
+		<tr>
+			<td>ジャンル：</td>
+			<td><%= restaurant.genre.name %></td>
+		</table>
+		<div class="clearfix">
+			<p style="float: left;">タグ：</p>
+			<p style="border: solid 1px; float: left;">ラーメン</p>
+			<p style="border: solid 1px; float: left;">ラーメン</p>
+			<p style="border: solid 1px; float: left;">ラーメン</p>
+		</div>
+		<p>〒<%= restaurant.postal_code %> <%= restaurant.address %></p>
+		<img src="">
+	</div>
+	<% end %>
