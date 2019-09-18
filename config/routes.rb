@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   	patch '/users/:id/withdrawal', to: 'users#quit'
   	resources :favorites, only:[:create, :destroy]
   	resources :relationships, only:[:create, :destroy, :index]
-  	resources :stations, only:[:index, :show]
+  	resources :stations, only:[:show]
   	resources :tags, only:[:new, :create, :destroy, :update]
   	#tagsのupdateいる？
   end
