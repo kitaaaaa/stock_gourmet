@@ -32,16 +32,8 @@
 		<table>
 			<tbody>
 				<tr>
-					<th>姓</th>
-					<td><%= @user.family_name %></td>
 					<th>名</th>
-					<td><%= @user.first_name %></td>
-				</tr>
-				<tr>
-					<th>セイ</th>
-					<td><%= @user.family_name_kana %></td>
-					<th>メイ</th>
-					<td><%= @user.first_name_kana %></td>
+					<td><%= @user.name %></td>
 				</tr>
 			</tbody>
 		</table>
@@ -49,14 +41,6 @@
 	 <div>
     	<dt>電話番号：</dt>
 		<dd><%= @user.telephone_number %></dd>
-	 </div>
-	 <div>
-		<dt> 郵便番号：</dt>
-		<dd><%= @user.postal_code %></dd>
-	 </div>
-	 <div>
-		<dt> 住所：</dt>
-		<dd><%= @user.address %></dd>
 	 </div>
 	 <div>
 		<dt>E-mail：</dt>
@@ -73,7 +57,6 @@
 
 	 <div>
 		<%= link_to '編集', edit_users_user_path(@user.id), class: "btn btn-success col-md-1" %>
-		<%= link_to '削除', edit_users_user_path(@user.id), class: "btn col-md-1" %>
 	 </div>
 	</div>
  </div>

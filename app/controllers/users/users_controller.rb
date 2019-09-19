@@ -17,17 +17,18 @@ class Users::UsersController < ApplicationController
 	end
 
 	def withdrawal
-		
+		@user = User.find(params[:id])
 	end
 
-	def quit
-		
+	def destroy #論理削除
+		@user = User.find(params[:id])
+		@user.is_quit
+		redirect_to destroy_user_session_path
 	end
 
 	private
 	def user_params
-		params.require(:user).permit(:id, 
-			:email, :family_name, :first_name, :family_name_kana, :first_name_kana, 
-			:telephone_number, :postal_code, :address, :is_quit, :image)
+		params.require(:user).permit(:id, :email, :name, 
+			:telephone_number, :is_quit, :image)
 	end
 end

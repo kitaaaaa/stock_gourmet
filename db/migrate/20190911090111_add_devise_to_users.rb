@@ -6,15 +6,9 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-
-      t.string :family_name,        null: false, default: ""
-      t.string :first_name,       null: false, default: ""
-      t.string :family_name_kana,   null: false, default: ""
-      t.string :first_name_kana,  null: false, default: ""
+      t.string :name
       #default: ""は、nullの時の文字列を保障
       t.string :telephone_number, null: false, default: ""
-      t.string :postal_code, null: false, default: ""
-      t.text :address, null: false, default: ""
       t.string :image
       t.text :introduction, default: ""
       t.integer :user_tag_id
@@ -35,7 +29,6 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
        t.string   :current_sign_in_ip
        t.string   :last_sign_in_ip
 
-       t.string :name
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
