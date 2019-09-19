@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2019_09_16_025630) do
     t.integer "restaurant_tag_id"
     t.float "latitude"
     t.float "longitude"
+    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -82,6 +83,7 @@ ActiveRecord::Schema.define(version: 2019_09_16_025630) do
 
   create_table "stations", force: :cascade do |t|
     t.string "name", default: "", null: false
+    t.string "address", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -123,8 +125,9 @@ ActiveRecord::Schema.define(version: 2019_09_16_025630) do
     t.string "postal_code", default: "", null: false
     t.text "address", default: "", null: false
     t.string "image"
-    t.text "introduction"
+    t.text "introduction", default: ""
     t.integer "user_tag_id"
+    t.string "image_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

@@ -1,19 +1,27 @@
-<div>
-	<h1><%= @restaurant.name %></h1>
+<div>map</div>
+<img src="">
+
+<h1><%= @station.name %>駅</h1>
+
+<h2>交通アクセス</h2>
+<% @station.station_trains.each do |s_t| %>
+	<p><%= s_t.train.name %></p>
+<% end %>
+
+<h2><%= @station.name %>の店たち</h2>
+	<% @station.restaurants.each do |restaurant| %>
 	<div>
+		<h3>rank, <%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h3>
 		<table>
 		<tr>
-			<td>ジャンル：</td>
-			<td><%= @restaurant.genre.name %></td>
-		</tr>
-		<tr>
 			<td>最寄り駅：</td>
-			<td><%= link_to @restaurant.station.name, users_station_path(@restaurant.station.id) %></td>
+			<td><%= restaurant.station.name %></td>
+			<td>予算：</td>
+			<td>￥<%= restaurant.budget %></td>
 		</tr>
 		<tr>
-			<td>予算：</td>
-			<td>￥<%= @restaurant.budget %></td>
-		</tr>
+			<td>ジャンル：</td>
+			<td><%= restaurant.genre.name %></td>
 		</table>
 		<div class="clearfix">
 			<p style="float: left;">タグ：</p>
@@ -21,14 +29,12 @@
 			<p style="border: solid 1px; float: left;">ラーメン</p>
 			<p style="border: solid 1px; float: left;">ラーメン</p>
 		</div>
-		<p>〒<%= @restaurant.postal_code %> <%= @restaurant.address %></p>
+		<p>〒<%= restaurant.postal_code %> <%= restaurant.address %></p>
 		<img src="">
+	</div>
+	<% end %>
 
-		<%= link_to '編集', edit_users_restaurant_path(@restaurant.id) %>
-		<%= link_to 'トップ画面へ戻る', root_path %>
-</div>
-		
-<div>
+	<div>
 <div id="map"></div>
 
 <style>
@@ -41,7 +47,7 @@
 function initMap() {
  
   var target = document.getElementById('map'); //マップを表示する要素を指定
-  var address ='<%= @restaurant.address %>'; //住所を指定
+  var address ='<%= @station.address %>'; //駅の住所を指定
   var geocoder = new google.maps.Geocoder();  
 
   geocoder.geocode({ address: address }, function(results, status){
@@ -70,6 +76,5 @@ function initMap() {
 }
 </script>
 	</div>
-</div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKo2dKiuRl-Jz67szLgRlRZFpGJOugF7g&callback=initMap" async defer></script>

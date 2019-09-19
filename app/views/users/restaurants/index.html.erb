@@ -1,5 +1,3 @@
-<%= link_to 'ログイン', new_user_session_path %>
-
 <% if user_signed_in? %>
 	<p>ログイン中...</p>
 <% else %>
@@ -14,21 +12,9 @@
 		<!-- 駅名＋絞込、テーブル等で横並び -->
 		<table>
 			<tbody>
-			<td>横浜</td>
-			<td>池袋</td>
-			<td>天王洲アイル</td>
-			<td>横浜</td>
-			<td>池袋</td>
-			<td>天王洲アイル</td>
-			<td>横浜</td>
-			<td>池袋</td>
-			<td>天王洲アイル</td>
-			<td>横浜</td>
-			<td>池袋</td>
-			<td>天王洲アイル</td>
-			<td>横浜</td>
-			<td>池袋</td>
-			<td>天王洲アイル</td>
+				<% @stations.each do |station| %>
+					<td><%= link_to station.name, users_station_path(station.id) %></td>
+				<% end %>
 			</tbody>
 		</table>
 	</div>
@@ -36,23 +22,11 @@
 	<div>
 		<!-- 駅名＋絞込、テーブル等で横並び -->
 		<table>
-		<tbody>
-		<td>横浜</td>
-		<td>池袋</td>
-		<td>天王洲アイル</td>
-		<td>横浜</td>
-		<td>池袋</td>
-		<td>天王洲アイル</td>
-		<td>横浜</td>
-		<td>池袋</td>
-		<td>天王洲アイル</td>
-		<td>横浜</td>
-		<td>池袋</td>
-		<td>天王洲アイル</td>
-		<td>横浜</td>
-		<td>池袋</td>
-		<td>天王洲アイル</td>
-		</tbody>
+			<tbody>
+				<% @stations.each do |station| %>
+					<td><%= station.name %></td>
+				<% end %>
+			</tbody>
 		</table>
 	</div>
 </div>
@@ -87,6 +61,7 @@
 </div>
 
 <div>
+	<!-- フォロー機能追加してから -->
 	<h2>注目のユーザー</h2>
 	<div>
 		<img src="">
