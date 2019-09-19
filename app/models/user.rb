@@ -7,6 +7,8 @@ class User < ApplicationRecord
 	has_many :favorites
 	has_many :user_tags
 
+	attachment :image
+
 	#presence、左の要素が存在するときtrue、なければ無効。
 	validates :family_name, presence: true
 	validates :first_name, presence: true

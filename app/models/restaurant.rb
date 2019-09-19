@@ -1,4 +1,6 @@
 class Restaurant < ApplicationRecord
+	attachment :image
+	
 	belongs_to :genre
 	belongs_to :station
 

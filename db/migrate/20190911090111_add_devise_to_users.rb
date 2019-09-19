@@ -18,7 +18,8 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
       t.string :image
       t.text :introduction, default: ""
       t.integer :user_tag_id
-      t.string :image
+      t.string :image_id
+      #カラムにはrefileの使い方に習って後ろに_idをつけないといけない
 
       ## Recoverable
       t.string   :reset_password_token
