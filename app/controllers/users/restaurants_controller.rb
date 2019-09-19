@@ -8,10 +8,11 @@ class Users::RestaurantsController < ApplicationController
 
 	def show
 		@restaurant = Restaurant.find(params[:id])
-
+		@user = current_user
 	end
 
 	def new
+		@user = current_user
 		@restaurant = Restaurant.new
 		@menu = Menu.new
 		@station = Station.new
@@ -28,6 +29,7 @@ class Users::RestaurantsController < ApplicationController
 	end
 
 	def edit
+		@user = current_user
 		@restaurant = Restaurant.find(params[:id])
 	end
 
@@ -38,7 +40,9 @@ class Users::RestaurantsController < ApplicationController
 	end
 
 	def destroy
-		
+		@restaurant = Restaurant.find(params[:id])
+		@restaurant.destroy
+		redirect_to root_path
 	end
 
 	private

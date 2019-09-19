@@ -22,7 +22,7 @@
 			<p style="border: solid 1px; float: left;">ラーメン</p>
 		</div>
 		<p>〒<%= @restaurant.postal_code %> <%= @restaurant.address %></p>
-		<img src="">
+		<%= attachment_image_tag @restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
 
 		<%= link_to '編集', edit_users_restaurant_path(@restaurant.id) %>
 		<%= link_to 'トップ画面へ戻る', root_path %>
