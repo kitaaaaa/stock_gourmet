@@ -1,1 +1,80 @@
 <h1>user/show</h1>
+<div>
+ <ul id="tab-menu" class="clearfix">
+		<li style="float: left;"><a href="#tab1" class="active">チェックリスト</a></li>
+		<li style="float: left;"><a href="#tab2">ユーザー情報</a></li>
+ </ul>
+ 
+
+ <div id="tab-contents" class="clearfix">
+	<div id="tab1" class="tab">
+	 <h2>あなたのチェックリスト</h2>
+	 <div>検索</div>
+	 <div>
+		<img src="">
+		<p>登録日</p>
+		<p>店名</p>
+		<p>予算</p>
+		<p>ジャンル</p>
+		<p>タグ</p>
+		<p>〒</p>
+		<p>住所</p>
+		<div>チェック</div>
+		<button>編集</button>
+		<button>削除</button>
+	 </div>
+	</div>
+	
+
+	<div id="tab2" class="tab">
+	 <h2>ユーザー情報</h2>
+	 <div>
+		<table>
+			<tbody>
+				<tr>
+					<th>姓</th>
+					<td><%= @user.family_name %></td>
+					<th>名</th>
+					<td><%= @user.first_name %></td>
+				</tr>
+				<tr>
+					<th>セイ</th>
+					<td><%= @user.family_name_kana %></td>
+					<th>メイ</th>
+					<td><%= @user.first_name_kana %></td>
+				</tr>
+			</tbody>
+		</table>
+	 </div>
+	 <div>
+    	<dt>電話番号：</dt>
+		<dd><%= @user.telephone_number %></dd>
+	 </div>
+	 <div>
+		<dt> 郵便番号：</dt>
+		<dd><%= @user.postal_code %></dd>
+	 </div>
+	 <div>
+		<dt> 住所：</dt>
+		<dd><%= @user.address %></dd>
+	 </div>
+	 <div>
+		<dt>E-mail：</dt>
+		<dd><%= @user.email %></dd>
+	 </div>
+
+	 <div>
+		<img src="">
+		<div>
+			<dt>自己紹介：</dt>
+			<dd><%= @user.introduction %></dd>
+		</div>
+	 </div>
+
+	 <div>
+		<%= link_to '編集', edit_users_user_path(@user.id), class: "btn btn-success col-md-1" %>
+		<%= link_to '削除', edit_users_user_path(@user.id), class: "btn col-md-1" %>
+	 </div>
+	</div>
+ </div>
+</div>

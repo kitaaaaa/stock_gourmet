@@ -16,8 +16,9 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
       t.string :postal_code, null: false, default: ""
       t.text :address, null: false, default: ""
       t.string :image
-      t.text :introduction 
-      t.integer :user_tag_id     
+      t.text :introduction, default: ""
+      t.integer :user_tag_id
+      t.string :image
 
       ## Recoverable
       t.string   :reset_password_token

@@ -4,6 +4,7 @@ class Users::StationsController < ApplicationController
 	end
 
 	def show
+		@user = current_user
 		@station = Station.find(params[:id])
 		@station_trains = @station.station_trains
 		@restaurant = @station.restaurants

@@ -2,6 +2,7 @@ class Users::RestaurantsController < ApplicationController
 	def index
 		@restaurants = Restaurant.all
 		@users = User.all
+		@user = current_user
 		@stations = Station.all
 	end
 

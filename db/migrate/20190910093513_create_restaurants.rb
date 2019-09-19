@@ -11,6 +11,7 @@ class CreateRestaurants < ActiveRecord::Migration[5.2]
       t.integer :restaurant_tag_id
       t.float :latitude
       t.float :longitude
+      t.string :image
     	#お気に入り区分も
       t.timestamps
     end

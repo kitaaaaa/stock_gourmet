@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 2019_09_16_025630) do
     t.string "postal_code", default: "", null: false
     t.text "address", default: "", null: false
     t.string "image"
-    t.text "introduction"
+    t.text "introduction", default: ""
     t.integer "user_tag_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
