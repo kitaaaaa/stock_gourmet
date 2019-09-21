@@ -1,6 +1,8 @@
 class Users::UsersController < ApplicationController
 	def show
-		@user = current_user
+		@user = User.find(params[:id])
+		@id = @user.id
+		@followers = @user.followings
 	end
 
 	def edit
@@ -29,6 +31,6 @@ class Users::UsersController < ApplicationController
 	private
 	def user_params
 		params.require(:user).permit(:id, :email, :name, 
-			:telephone_number, :is_quit, :image)
+			:telephone_number, :is_quit, :image, :introduction)
 	end
 end

@@ -61,13 +61,20 @@
 </div>
 
 <div>
+
 	<!-- フォロー機能追加してから -->
 	<h2>注目のユーザー</h2>
-	<div>
-		<img src="">
-		<p>user.name</p>
-		<p>introduction</p>
-		<button style="float: right;">フォローする</button>
+	<% @users.each do |user| %>
+	<div class="clearfix">
+	 <div style="float: left;">
+		<%= attachment_image_tag user, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
+	 </div>
+	 <div style="float: left;">
+		<p><%= link_to user.name, users_user_path(user.id) %></p>
+		<p><%= user.introduction %></p>
 		<p>tag.name</p>
+		<button>フォローする</button>
+	 </div>
 	</div>
+	<% end %>
 </div>

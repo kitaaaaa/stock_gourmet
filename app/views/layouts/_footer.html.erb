@@ -6,7 +6,9 @@
 	<div class="col-md-2" style="margin-top: 35px;">
 		<a href="#top">Topへ戻る</a>
 	</div>
+	<% if user_signed_in? %>
 	<div>
 		<%= link_to "退会の方はこちらへ", users_path(@user.id) %>
 	</div>
+	<% end %>
 </footer>
