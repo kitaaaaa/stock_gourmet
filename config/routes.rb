@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   	#resourcesにないアクションだからそのまま書いた。
   	get '/users/:id/withdrawal', to: 'users#withdrawal'
   	resources :favorites, only:[:create, :destroy]
-  	resources :relationships, only:[:create, :destroy, :index]
+  	resources :relationships, only:[:create, :destroy]
   	resources :stations, only:[:show]
   	resources :tags, only:[:new, :create, :destroy, :update]
   	#tagsのupdateいる？

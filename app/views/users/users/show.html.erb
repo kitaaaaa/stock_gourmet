@@ -1,4 +1,8 @@
+<% if current_user.id != @user.id %>
 <h1><%= @user.name%></h1>
+<% else %>
+<h1>マイページ</h1>
+<% end %>
 <div>
  <ul id="tab-menu" class="clearfix">
 	<li style="float: left;"><a href="#tab1" class="active">チェックリスト</a></li>
@@ -79,7 +83,6 @@
 
 	<div id="tab3" class="tab">
 		<h2><%= @user.name %>のフォローリスト</h2>
-		<p>フォロー数:<%= @user.followers.count %></p>
 		<% @followers.each do |follower| %>
 			<div class="clearfix">
 			 <div style="float: left;">
