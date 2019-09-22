@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 2019_09_16_025630) do
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "name"
+    t.string "name", default: "", null: false
     t.string "telephone_number", default: "", null: false
     t.string "image"
     t.text "introduction", default: ""

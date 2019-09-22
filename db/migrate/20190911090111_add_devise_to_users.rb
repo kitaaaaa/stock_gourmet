@@ -6,7 +6,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.string :name
+      t.string :name, null: false, default: ""
       #default: ""は、nullの時の文字列を保障
       t.string :telephone_number, null: false, default: ""
       t.string :image

@@ -37,6 +37,7 @@
 	<% @restaurants.each do |restaurant| %>
 	<div>
 		<h3>rank, <%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h3>
+		<%= attachment_image_tag restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
 		<table>
 		<tr>
 			<td>最寄り駅：</td>
@@ -55,13 +56,12 @@
 			<p style="border: solid 1px; float: left;">ラーメン</p>
 		</div>
 		<p>〒<%= restaurant.postal_code %> <%= restaurant.address %></p>
-		<img src="">
+
 	</div>
 	<% end %>
 </div>
 
 <div>
-
 	<!-- フォロー機能追加してから -->
 	<h2>注目のユーザー</h2>
 	<% @users.each do |user| %>
