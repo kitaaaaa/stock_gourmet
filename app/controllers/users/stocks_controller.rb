@@ -1,4 +1,4 @@
-class StocksController < ApplicationController
+class Users::StocksController < ApplicationController
 	def create
 		restaurant = Restaurant.find(params[:restaurant_id])
 		stock = current_user.stocks.new(restaurant_id: restaurant.id)

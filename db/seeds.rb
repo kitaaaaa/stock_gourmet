@@ -49,12 +49,12 @@ station_names.zip(genre_names).each do |station_name, genre_name|
 end
 
 
-favorite_names = %w[行きたい お気に入り]
-#with_index |i|で、iに対して0,1,2と数字をいれる。
-favorite_names.each_with_index do |favorite_name, i|
-	Favorite.create(
-		user: User.find(i + 1),
-		restaurant: Restaurant.first,
-		name: favorite_name
-	)
-end
+# favorite_names = %w[行きたい お気に入り]
+# #with_index |i|で、iに対して0,1,2と数字をいれる。
+# favorite_names.each_with_index do |favorite_name, i|
+# 	Favorite.create(
+# 		user: User.find(i + 1),
+# 		restaurant: Restaurant.first,
+# 		name: favorite_name
+# 	)
+# end
