@@ -4,6 +4,8 @@ class Users::RestaurantsController < ApplicationController
 		@users = User.all
 		@user = current_user
 		@stations = Station.all
+		@favorites = Favorite.all
+		@stocks = Stock.all
 	end
 
 	def show

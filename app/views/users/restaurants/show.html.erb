@@ -26,19 +26,33 @@
 
 		<%= link_to '編集', edit_users_restaurant_path(@restaurant.id) %>
 		<%= link_to 'トップ画面へ戻る', root_path %>
-		<div>
-			<% if @favorite.present? %>
-				<%= link_to "お気に入りの解除", users_favorite_path(@favorite), :method => :delete %>
-				<!-- methodに指定がないときは、デフォルトでgetになる。 -->
-			<% else %>
-				<%= link_to "お気に入りに追加", users_favorites_path(restaurant_id: @restaurant.id ), :method => :post %>
-			<% end %>
-			<% if @stock.present? %>
-				<%= link_to "ストックの解除", users_stock_path(@stock), :method => :delete %>
-			<% else %>
-				<%= link_to "ストックリストに追加", users_stocks_path(restaurant_id: @restaurant.id ), :method => :post %>
-			<% end %>	
-        </div>
+			<table>
+			 <tbody>
+				<tr>
+					<td>この商品のお気に入り数：<%= @restaurant.favorites.count %></td>
+					<td>
+						<% if @favorite.present? %>
+						 <%= link_to "お気に入りの解除", users_favorite_path(@favorite), :method => :delete %>
+							 <!-- methodに指定がないときは、デフォルトでgetになる。 -->
+						<% else %>
+						 <%= link_to "お気に入りに追加", users_favorites_path(restaurant_id: @restaurant.id ), :method => :post %>
+						<% end %>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						この商品をストックした人たち：<%= @restaurant.stocks.count %>
+					</td>
+					<td>
+						<% if @stock.present? %>
+						 <%= link_to "ストックの解除", users_stock_path(@stock), :method => :delete %>
+						<% else %>
+						 <%= link_to "ストックリストに追加", users_stocks_path(restaurant_id: @restaurant.id ), :method => :post %>
+						<% end %>
+					</td>
+				</tr>
+			 </tbody>
+			</table>
 	</div>
 		
 	<div>

@@ -56,7 +56,27 @@
 			<p style="border: solid 1px; float: left;">ラーメン</p>
 		</div>
 		<p>〒<%= restaurant.postal_code %> <%= restaurant.address %></p>
-
+		<table>
+			 <tbody>
+				<tr>
+					<td>この商品のお気に入り数：<%= restaurant.favorites.count %></td>
+				</tr>
+				<tr>
+					<td>
+						この商品をストックした人たち：<%= restaurant.stocks.count %>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<% if @stock.present? %>
+						 <%= link_to "ストックの解除", users_stock_path(@stock), :method => :delete %>
+						<% else %>
+						 <%= link_to "ストックリストに追加", users_stocks_path(restaurant_id: restaurant.id ), :method => :post %>
+						<% end %>
+					</td>
+				</tr>
+			 </tbody>
+			</table>
 	</div>
 	<% end %>
 </div>
