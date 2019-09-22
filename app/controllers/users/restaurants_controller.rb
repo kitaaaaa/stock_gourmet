@@ -8,6 +8,7 @@ class Users::RestaurantsController < ApplicationController
 
 	def show
 		@restaurant = Restaurant.find(params[:id])
+		@favorite = Favorite.find_by(user: current_user, restaurant: @restaurant)
 		@user = current_user
 	end
 

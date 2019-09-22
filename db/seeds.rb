@@ -13,7 +13,7 @@ Station.delete_all
 Restaurant.delete_all
 
 
-Genre.create!(name: "default")
+
 genre_names = %w[ラーメン ハンバーガー カフェ うどん そば パスタ 寿司 カレー タピオカ オムライス]
 genre_names.each do |genre_name|
 	Genre.create(name: genre_name)
@@ -46,4 +46,15 @@ station_names.zip(genre_names).each do |station_name, genre_name|
 	genre = Genre.create(name: genre_name)
 	 Restaurant.create!(name: "default", genre_id: genre.id, station_id: station.id)
 
+end
+
+
+favorite_names = %w[行きたい お気に入り]
+#with_index |i|で、iに対して0,1,2と数字をいれる。
+favorite_names.each_with_index do |favorite_name, i|
+	Favorite.create(
+		user: User.find(i + 1),
+		restaurant: Restaurant.first,
+		name: favorite_name
+	)
 end

@@ -117,13 +117,8 @@ ActiveRecord::Schema.define(version: 2019_09_16_025630) do
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "family_name", default: "", null: false
-    t.string "first_name", default: "", null: false
-    t.string "family_name_kana", default: "", null: false
-    t.string "first_name_kana", default: "", null: false
+    t.string "name", default: "", null: false
     t.string "telephone_number", default: "", null: false
-    t.string "postal_code", default: "", null: false
-    t.text "address", default: "", null: false
     t.string "image"
     t.text "introduction", default: ""
     t.integer "user_tag_id"
@@ -136,7 +131,6 @@ ActiveRecord::Schema.define(version: 2019_09_16_025630) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
-	root "users/restaurants#index"
+  root "users/restaurants#index"
 	devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :users do
   	resources :restaurants
-  	resources :users, only:[:show, :edit, :update]
+  	resources :users, only:[:show, :edit, :update, :destroy]
   	#resourcesにないアクションだからそのまま書いた。
   	get '/users/:id/withdrawal', to: 'users#withdrawal'
-  	patch '/users/:id/withdrawal', to: 'users#quit'
   	resources :favorites, only:[:create, :destroy]
-  	resources :relationships, only:[:create, :destroy, :index]
+  	resources :relationships, only:[:create, :destroy]
   	resources :stations, only:[:show]
   	resources :tags, only:[:new, :create, :destroy, :update]
   	#tagsのupdateいる？

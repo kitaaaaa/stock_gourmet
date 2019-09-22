@@ -48,7 +48,6 @@
                     <%= attachment_image_tag @restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
                 </div>
 
-        		<!-- お気に入り区分も追加する、フォームはselect -->
         		<div>
         			<%= f.submit "更新" %>
                     <%= link_to "削除", users_restaurant_path(@restaurant.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>

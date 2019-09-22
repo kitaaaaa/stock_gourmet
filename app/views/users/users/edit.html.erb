@@ -3,40 +3,15 @@
     <%= form_for(@user, url: users_user_path(@user.id)) do |f| %>
 
     <div class="field">
-        <%= f.label :family_name, "姓" %><br />
-        <%= f.text_field :family_name, autofocus: true, autocomplete: "family_name" %>
+        <%= f.label :name, "アカウント名" %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
     </div>
       <!-- autofocus: trueは自動フォーカスを指定 -->
       <!-- autocomplete:は候補の単語を表示 -->
 
     <div class="field">
-        <%= f.label :first_name, "名" %><br />
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-    </div>
-
-    <div class="field">
-        <%= f.label :family_name_kana, "セイ" %><br />
-        <%= f.text_field :family_name_kana, autofocus: true, autocomplete: "family_name_kana" %>
-    </div>
-
-    <div class="field">
-        <%= f.label :first_name_kana, "メイ" %><br />
-        <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
-    </div>
-
-    <div class="field">
         <%= f.label :telephone_number, "電話番号" %><br />
         <%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number" %>
-    </div>
-
-    <div class="field">
-        <%= f.label :postal_code, "郵便番号" %><br />
-        <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
-    </div>
-
-    <div class="field">
-        <%= f.label :address, "住所" %><br />
-        <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
     </div>
 
     <div class="field">
@@ -50,7 +25,7 @@
     </div>
 
     <div class="field">
-        <%= f.label :image_, "プロフィール画像" %><br />
+        <%= f.label :image, "プロフィール画像" %><br />
         <%= f.attachment_field :image %>
 		<%= attachment_image_tag @user, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
     </div>

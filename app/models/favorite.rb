@@ -2,5 +2,5 @@ class Favorite < ApplicationRecord
 	belongs_to :restaurant
 	belongs_to :user
 
-	varidates_uniqueness_of :user_id, scope: :restaurant_id
+	validates :user_id, uniqueness: {scope: :restaurant_id}
 end
