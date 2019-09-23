@@ -27,9 +27,9 @@
 
 <div>
 	<h2>the best お気に入りトップ10</h2>
-	<% @restaurants.each do |restaurant| %>
+	 <% @all_ranks.each.with_index(1) do |restaurant, i| %>
 		<div>
-			<h3>rank, <%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h3>
+			<h3>第<%= i %>位<%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h3>
 			<%= attachment_image_tag restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
 			<table>
 			 <tbody>

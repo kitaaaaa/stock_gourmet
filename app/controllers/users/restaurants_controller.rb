@@ -8,9 +8,12 @@ class Users::RestaurantsController < ApplicationController
 		@stations = Station.all
 		@q = Station.ransack(params[:q])
   	@stations = @q.result(distinct: true)
-		@favorites = Favorite.all
-		@stock = Stock.find_by(user: current_user, restaurant: @restaurant)
-		@stocks = Stock.all
+  	@favorites = Favorite.all
+		@all_ranks = Restaurant.find(Favorite.group(:restaurant_id).order('count(restaurant_id) desc').limit(10).pluck(:restaurant_id))
+		#A.group(x)でAが持つ同じｘでグループ分け
+		#restaurant内で数(count)が多い順に(desc)に並べる
+		#limit(r)で、表示数をr個までに
+		#pluck(t)で、tを数字のみ獲得
 	end
 
 	def show
