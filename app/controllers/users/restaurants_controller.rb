@@ -1,14 +1,27 @@
 class Users::RestaurantsController < ApplicationController
 	def index
 		@restaurants = Restaurant.all
+		@q = Restaurant.ransack(params[:q])
+  	@restaurants = @q.result(distinct: true)
 		@users = User.all
 		@user = current_user
 		@stations = Station.all
+		@q = Station.ransack(params[:q])
+  	@stations = @q.result(distinct: true)
+  	@favorites = Favorite.all
+		@all_ranks = Restaurant.find(Favorite.group(:restaurant_id).order('count(restaurant_id) desc').limit(10).pluck(:restaurant_id))
+		#A.group(x)でAが持つ同じｘでグループ分け
+		#restaurant内で数(count)が多い順に(desc)に並べる
+		#limit(r)で、表示数をr個までに
+		#pluck(t)で、tを数字のみ獲得
 	end
 
 	def show
 		@restaurant = Restaurant.find(params[:id])
+		@q = Restaurant.ransack(params[:q])
+  	@restaurants = @q.result(distinct: true)
 		@favorite = Favorite.find_by(user: current_user, restaurant: @restaurant)
+		@stock = Stock.find_by(user: current_user, restaurant: @restaurant)
 		@user = current_user
 	end
 
@@ -51,3 +64,5 @@ class Users::RestaurantsController < ApplicationController
 		params.require(:restaurant).permit(:name, :menu, :genre_id, :station_id, :postal_code, :address, :latitude, :longitude, :budget)		
 	end
 end
+
+

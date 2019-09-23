@@ -3,6 +3,11 @@ class Users::UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@id = @user.id
 		@followers = @user.followings
+		@restaurants = Restaurant.all
+		@q = Restaurant.ransack(params[:q])
+  	@restaurants = @q.result(distinct: true)
+		@stock = Stock.find_by(user: @user, restaurant: @restaurant)
+		@favorite = Favorite.find_by(user: @user, restaurant: @restaurant)
 	end
 
 	def edit

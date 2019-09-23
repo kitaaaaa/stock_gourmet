@@ -8,26 +8,54 @@
 	<li style="float: left;"><a href="#tab1" class="active">チェックリスト</a></li>
 	<li style="float: left;"><a href="#tab2">ユーザー情報</a></li>
 	<li style="float: left;"><a href="#tab3">フォローリスト</a></li>
+	<% if current_user.id == @user.id %>
+		<li style="float: left;"><a href="#tab4">保存リスト</a></li>
+	<% end %>
  </ul>
  
 
  <div id="tab-contents" class="clearfix">
 	<div id="tab1" class="tab">
 	 <h2><%= @user.name %>のチェックリスト</h2>
-	 <div>検索</div>
-	 <div>
-		<img src="">
-		<p>登録日</p>
-		<p>店名</p>
-		<p>予算</p>
-		<p>ジャンル</p>
-		<p>タグ</p>
-		<p>〒</p>
-		<p>住所</p>
-		<div>チェック</div>
-		<button>編集</button>
-		<button>削除</button>
-	 </div>
+	 <%= search_form_for(@q, url: users_user_path(@user.id)) do |f| %>
+  	<%= f.label :name_or_address, "名前、住所で検索" %>
+  	<%= f.search_field :name_or_address_cont %>
+  	<%= f.submit "検索" %>
+	 <% end %>
+
+	 <% @user.favorites.each do |favorite| %>
+		<div>
+			<h3><%= link_to favorite.restaurant.name, users_restaurant_path(favorite.restaurant.id) %></h3>
+			<%= attachment_image_tag favorite.restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
+			<table>
+			 <tbody>
+				<tr>
+					<td>最寄り駅：</td>
+					<td><%= favorite.restaurant.station.name %></td>
+					<td>予算：</td>
+					<td>￥<%= favorite.restaurant.budget %></td>
+				</tr>
+				<tr>
+					<td>ジャンル：</td>
+					<td><%= favorite.restaurant.genre.name %></td>
+				</tr>
+			 </tbody>
+			</table>
+			<table>
+			 <tbody>
+				<tr>
+					<td>この商品のお気に入り数：<%= favorite.restaurant.favorites.count %></td>
+				</tr>
+				<tr>
+					<td>
+						この商品を保存した人たち：<%= favorite.restaurant.stocks.count %>
+					</td>
+				</tr>
+			 	</tbody>
+			</table>
+			<%= link_to "この店の詳細へ", users_restaurant_path(favorite.restaurant.id) %>
+		</div>
+	<% end %>
 	</div>
 	
 
@@ -102,6 +130,48 @@
 				<% end %>
 			 </div>
 			</div>
+		<% end %>
+	</div>
+
+	<div id="tab4" class="tab">
+		<h2>あなたの保存済みリスト</h2>
+		<%= search_form_for(@q, url: users_user_path(@user.id)) do |f| %>
+  		<%= f.label :name_or_address, "名前、住所で検索" %>
+  		<%= f.search_field :name_or_address_cont %>
+  		<%= f.submit "検索" %>
+	 	<% end %>
+		<% @user.stocks.each do |stock| %>
+		 <div>
+			<h3><%= link_to stock.restaurant.name, users_restaurant_path(stock.restaurant.id) %></h3>
+			<%= attachment_image_tag stock.restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
+			<table>
+			 <tbody>
+				<tr>
+					<td>最寄り駅：</td>
+					<td><%= stock.restaurant.station.name %></td>
+					<td>予算：</td>
+					<td>￥<%= stock.restaurant.budget %></td>
+				</tr>
+				<tr>
+					<td>ジャンル：</td>
+					<td><%= stock.restaurant.genre.name %></td>
+				</tr>
+			 </tbody>
+			</table>
+			<table>
+			 <tbody>
+				<tr>
+					<td>この商品のお気に入り数：<%= stock.restaurant.favorites.count %></td>
+				</tr>
+				<tr>
+					<td>
+						この商品をストックした人たち：<%= stock.restaurant.stocks.count %>
+					</td>
+				</tr>
+			 	</tbody>
+			</table>
+			<%= link_to "この店の詳細へ", users_restaurant_path(stock.restaurant.id) %>
+		 </div>
 		<% end %>
 	</div>
  </div>
