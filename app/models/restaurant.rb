@@ -10,7 +10,8 @@ class Restaurant < ApplicationRecord
 	has_many :stocks, dependent: :destroy
 	has_many :stocked_users, through: :stocks, source: :user
 	has_many :menus
-	has_many :restaurant_tags
+	has_many :restaurant_tags, dependent: :destroy
+	has_many :tags, through: :restaurant_tags
 
 	def favorited_by?(user)
 		favorites.where(user_id: user.id).exists?

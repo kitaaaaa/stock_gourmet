@@ -31,32 +31,40 @@
 	</div>
 </div>
 
+<%= search_form_for(@q, url: root_path) do |f| %>
+  <%= f.label :name_or_address_or_station_id, "キーワード検索" %>
+  <%= f.search_field :name_or_address_or_station_id_cont %>
+
+  <%= f.submit "検索" %>
+<% end %>
+
 <div>
 	<%= link_to '新規', new_users_restaurant_path %>
 	<h2>the best お気に入りトップ10</h2>
 	<% @restaurants.each do |restaurant| %>
-	<div>
-		<h3>rank, <%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h3>
-		<%= attachment_image_tag restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
-		<table>
-		<tr>
-			<td>最寄り駅：</td>
-			<td><%= restaurant.station.name %></td>
-			<td>予算：</td>
-			<td>￥<%= restaurant.budget %></td>
-		</tr>
-		<tr>
-			<td>ジャンル：</td>
-			<td><%= restaurant.genre.name %></td>
-		</table>
-		<div class="clearfix">
-			<p style="float: left;">タグ：</p>
-			<p style="border: solid 1px; float: left;">ラーメン</p>
-			<p style="border: solid 1px; float: left;">ラーメン</p>
-			<p style="border: solid 1px; float: left;">ラーメン</p>
-		</div>
-		<p>〒<%= restaurant.postal_code %> <%= restaurant.address %></p>
-		<table>
+		<div>
+			<h3>rank, <%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h3>
+			<%= attachment_image_tag restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
+			<table>
+			<tr>
+				<td>最寄り駅：</td>
+				<td><%= restaurant.station.name %></td>
+				<td>予算：</td>
+				<td>￥<%= restaurant.budget %></td>
+			</tr>
+			<tr>
+				<td>ジャンル：</td>
+				<td><%= restaurant.genre.name %></td>
+			</tr>
+			</table>
+			<div class="clearfix">
+				<p style="float: left;">タグ：</p>
+				<p style="border: solid 1px; float: left;">ラーメン</p>
+				<p style="border: solid 1px; float: left;">ラーメン</p>
+				<p style="border: solid 1px; float: left;">ラーメン</p>
+			</div>
+			<p>〒<%= restaurant.postal_code %> <%= restaurant.address %></p>
+			<table>
 			 <tbody>
 				<tr>
 					<td>この商品のお気に入り数：<%= restaurant.favorites.count %></td>
@@ -75,25 +83,9 @@
 						<% end %>
 					</td>
 				</tr>
-			 </tbody>
+			 	</tbody>
 			</table>
-	</div>
+		</div>
 	<% end %>
 </div>
 
-<div>
-	<!-- フォロー機能追加してから -->
-	<h2>注目のユーザー</h2>
-	<% @users.each do |user| %>
-	<div class="clearfix">
-	 <div style="float: left;">
-		<%= attachment_image_tag user, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
-	 </div>
-	 <div style="float: left;">
-		<p><%= link_to user.name, users_user_path(user.id) %></p>
-		<p><%= user.introduction %></p>
-		<p>tag.name</p>
-	 </div>
-	</div>
-	<% end %>
-</div>

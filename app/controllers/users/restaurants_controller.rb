@@ -1,6 +1,8 @@
 class Users::RestaurantsController < ApplicationController
 	def index
 		@restaurants = Restaurant.all
+		@q = Restaurant.ransack(params[:q])
+  	@restaurants = @q.result(distinct: true)		
 		@users = User.all
 		@user = current_user
 		@stations = Station.all
@@ -10,6 +12,8 @@ class Users::RestaurantsController < ApplicationController
 
 	def show
 		@restaurant = Restaurant.find(params[:id])
+		@q = Restaurant.ransack(params[:q])
+  	@restaurants = @q.result(distinct: true)
 		@favorite = Favorite.find_by(user: current_user, restaurant: @restaurant)
 		@stock = Stock.find_by(user: current_user, restaurant: @restaurant)
 		@user = current_user
@@ -54,3 +58,5 @@ class Users::RestaurantsController < ApplicationController
 		params.require(:restaurant).permit(:name, :menu, :genre_id, :station_id, :postal_code, :address, :latitude, :longitude, :budget)		
 	end
 end
+
+
