@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
 	has_many :favorites, dependent: :destroy
 	has_many :favorited_restaurants, through: :favorites, source: :restaurant
+	has_many :stocks, dependent: :destroy
+	has_many :stocked_restaurants, through: :stocks, source: :restaurant
 	has_many :user_tags
 
 	attachment :image

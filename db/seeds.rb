@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Favorite.delete_all
+Stock.all
+Restaurant.delete_all
 Genre.delete_all
 StationTrain.delete_all
 Train.delete_all
 Station.delete_all
-Restaurant.delete_all
 
 
 
@@ -48,13 +50,4 @@ station_names.zip(genre_names).each do |station_name, genre_name|
 
 end
 
-
-favorite_names = %w[行きたい お気に入り]
-#with_index |i|で、iに対して0,1,2と数字をいれる。
-favorite_names.each_with_index do |favorite_name, i|
-	Favorite.create(
-		user: User.find(i + 1),
-		restaurant: Restaurant.first,
-		name: favorite_name
-	)
-end
+Admin.create!(name: "rr", email: rr@rr, password: rrrrrrrr)
