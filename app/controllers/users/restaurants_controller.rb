@@ -2,11 +2,14 @@ class Users::RestaurantsController < ApplicationController
 	def index
 		@restaurants = Restaurant.all
 		@q = Restaurant.ransack(params[:q])
-  	@restaurants = @q.result(distinct: true)		
+  	@restaurants = @q.result(distinct: true)
 		@users = User.all
 		@user = current_user
 		@stations = Station.all
+		@q = Station.ransack(params[:q])
+  	@stations = @q.result(distinct: true)
 		@favorites = Favorite.all
+		@stock = Stock.find_by(user: current_user, restaurant: @restaurant)
 		@stocks = Stock.all
 	end
 
