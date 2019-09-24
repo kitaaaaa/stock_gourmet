@@ -19,7 +19,7 @@
   <%= f.submit "検索" %>
 <% end %>
 
-	 	<%= search_form_for(@q, url: users_user_path(@user.id)) do |f| %>
+	 	<%= search_form_for(@q, url: root_path) do |f| %>
   		<%= f.label :name, "最寄り駅で検索" %>
   		<%= f.search_field :name_cont %>
   		<%= f.submit "検索" %>

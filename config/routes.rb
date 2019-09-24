@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "users/restaurants#index"
-	devise_for :users
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :users do
   	resources :restaurants
@@ -16,9 +16,15 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
+    root "admins#home"
+
   	resources :stations, except:[:destroy]
   	resources :users, only:[:index, :show, :destroy,]
   	#usersのdestroyいるか？
-  	#quitのアクションどう指定しようか？
+    devise_for :admins, controllers: {
+      sessions:      'admins/sessions',
+      passwords:     'admins/passwords',
+      registrations: 'admins/registrations'
+    }
   end
 end
