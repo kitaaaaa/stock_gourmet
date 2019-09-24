@@ -5894,3 +5894,178 @@ Processing by Admins::StationsController#index as HTML
 Completed 200 OK in 2260ms (Views: 2009.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/admins/stations" for 10.0.2.2 at 2019-09-24 10:24:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admins::StationsController#index as HTML
+  Rendering admins/stations/index.html.erb within layouts/application
+  [1m[36mStation Load (5.5ms)[0m  [1m[34mSELECT "stations".* FROM "stations"[0m
+  ↳ app/views/admins/stations/index.html.erb:4
+  Rendered admins/stations/index.html.erb within layouts/application (85.0ms)
+  Rendered layouts/_admins_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (12.6ms)
+Completed 200 OK in 11815ms (Views: 11578.8ms | ActiveRecord: 34.4ms)
+
+
+Started GET "/admins/stations" for 10.0.2.2 at 2019-09-24 10:25:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::StationsController#index as HTML
+  Rendering admins/stations/index.html.erb within layouts/application
+  [1m[36mStation Load (5.4ms)[0m  [1m[34mSELECT "stations".* FROM "stations"[0m
+  ↳ app/views/admins/stations/index.html.erb:4
+  Rendered admins/stations/index.html.erb within layouts/application (23.1ms)
+  Rendered layouts/_admins_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (3.2ms)
+Completed 200 OK in 2129ms (Views: 1961.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/admins/stations" for 10.0.2.2 at 2019-09-24 10:26:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::StationsController#index as HTML
+  Rendering admins/stations/index.html.erb within layouts/application
+  Rendered admins/stations/index.html.erb within layouts/application (271.7ms)
+Completed 500 Internal Server Error in 730ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No Ransack::Search object was provided to search_form_for!):
+    1: <h1>駅一覧</h1>
+    2: 	 	<%= search_form_for(@q, url: admins_stations_path) do |f| %>
+    3:   		<%= f.label :name, "名前で検索" %>
+    4:   		<%= f.search_field :name_cont %>
+    5:   		<%= f.submit "検索" %>
+  
+app/views/admins/stations/index.html.erb:2:in `_app_views_admins_stations_index_html_erb__3402415458899430075_47131030186640'
+Started GET "/admins/stations" for 10.0.2.2 at 2019-09-24 10:28:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admins::StationsController#index as HTML
+  Rendering admins/stations/index.html.erb within layouts/application
+  [1m[36mStation Load (7.2ms)[0m  [1m[34mSELECT DISTINCT "stations".* FROM "stations"[0m
+  ↳ app/views/admins/stations/index.html.erb:9
+  Rendered admins/stations/index.html.erb within layouts/application (112.8ms)
+  Rendered layouts/_admins_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (11.6ms)
+Completed 200 OK in 7032ms (Views: 6770.5ms | ActiveRecord: 40.4ms)
+
+
+Started GET "/admins/stations?utf8=%E2%9C%93&q%5Bname_cont%5D=%E6%9C%A8&commit=%E6%A4%9C%E7%B4%A2" for 10.0.2.2 at 2019-09-24 10:28:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::StationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"name_cont"=>"木"}, "commit"=>"検索"}
+  Rendering admins/stations/index.html.erb within layouts/application
+  [1m[36mStation Load (5.8ms)[0m  [1m[34mSELECT DISTINCT "stations".* FROM "stations" WHERE "stations"."name" LIKE '%木%'[0m
+  ↳ app/views/admins/stations/index.html.erb:9
+  Rendered admins/stations/index.html.erb within layouts/application (22.5ms)
+  Rendered layouts/_admins_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (3.8ms)
+Completed 200 OK in 2249ms (Views: 2094.6ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/admins/stations" for 10.0.2.2 at 2019-09-24 10:30:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::StationsController#index as HTML
+  Rendering admins/stations/index.html.erb within layouts/application
+  Rendered admins/stations/index.html.erb within layouts/application (382.8ms)
+Completed 500 Internal Server Error in 956ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name_address_cont' for Ransack::Search<class: Station, base: Grouping <combinator: and>>:Ransack::Search):
+    1: <h1>駅一覧</h1>
+    2: 	 	<%= search_form_for(@q, url: admins_stations_path) do |f| %>
+    3:   		<%= f.label :name_address, "名前、住所で検索" %>
+    4:   		<%= f.search_field :name_address_cont %>
+    5:   		<%= f.submit "検索" %>
+    6: 	 	<% end %>
+    7: 		<table class="bordered-table">
+  
+app/views/admins/stations/index.html.erb:4:in `block in _app_views_admins_stations_index_html_erb__3668898068946820912_70037228196300'
+app/views/admins/stations/index.html.erb:2:in `_app_views_admins_stations_index_html_erb__3668898068946820912_70037228196300'
+Started GET "/admins/stations" for 10.0.2.2 at 2019-09-24 10:32:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admins::StationsController#index as HTML
+  Rendering admins/stations/index.html.erb within layouts/application
+  Rendered admins/stations/index.html.erb within layouts/application (178.0ms)
+Completed 500 Internal Server Error in 810ms (ActiveRecord: 11.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `name_address_cont' for Ransack::Search<class: Station, base: Grouping <combinator: and>>:Ransack::Search):
+    1: <h1>駅一覧</h1>
+    2: 	 	<%= search_form_for(@q, url: admins_stations_path) do |f| %>
+    3:   		<%= f.label :name_address, "名前、住所で検索" %>
+    4:   		<%= f.search_field :name_address_cont %>
+    5:   		<%= f.submit "検索" %>
+    6: 	 	<% end %>
+    7: 		<table class="bordered-table">
+  
+app/views/admins/stations/index.html.erb:4:in `block in _app_views_admins_stations_index_html_erb__4226473083109123834_47160206645360'
+app/views/admins/stations/index.html.erb:2:in `_app_views_admins_stations_index_html_erb__4226473083109123834_47160206645360'
+Started GET "/admins/stations" for 10.0.2.2 at 2019-09-24 10:32:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::StationsController#index as HTML
+  Rendering admins/stations/index.html.erb within layouts/application
+  Rendered admins/stations/index.html.erb within layouts/application (130.3ms)
+Completed 500 Internal Server Error in 653ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name_address_cont' for Ransack::Search<class: Station, base: Grouping <combinator: and>>:Ransack::Search):
+    1: <h1>駅一覧</h1>
+    2: 	 	<%= search_form_for(@q, url: admins_stations_path) do |f| %>
+    3:   		<%= f.label :name_address, "名前、住所で検索" %>
+    4:   		<%= f.search_field :name_address_cont %>
+    5:   		<%= f.submit "検索" %>
+    6: 	 	<% end %>
+    7: 		<table class="bordered-table">
+  
+app/views/admins/stations/index.html.erb:4:in `block in _app_views_admins_stations_index_html_erb__4226473083109123834_47160207211560'
+app/views/admins/stations/index.html.erb:2:in `_app_views_admins_stations_index_html_erb__4226473083109123834_47160207211560'
+Started GET "/admins/stations" for 10.0.2.2 at 2019-09-24 10:34:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::StationsController#index as HTML
+  Rendering admins/stations/index.html.erb within layouts/application
+  [1m[36mStation Load (7.3ms)[0m  [1m[34mSELECT DISTINCT "stations".* FROM "stations"[0m
+  ↳ app/views/admins/stations/index.html.erb:9
+  Rendered admins/stations/index.html.erb within layouts/application (345.3ms)
+  Rendered layouts/_admins_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (12.8ms)
+Completed 200 OK in 7084ms (Views: 6879.1ms | ActiveRecord: 31.5ms)
+
+
+Started GET "/admins/stations" for 10.0.2.2 at 2019-09-24 10:35:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::StationsController#index as HTML
+  Rendering admins/stations/index.html.erb within layouts/application
+  [1m[36mStation Load (5.3ms)[0m  [1m[34mSELECT DISTINCT "stations".* FROM "stations"[0m
+  ↳ app/views/admins/stations/index.html.erb:9
+  Rendered admins/stations/index.html.erb within layouts/application (32.9ms)
+  Rendered layouts/_admins_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (3.7ms)
+Completed 200 OK in 2034ms (Views: 1895.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/admins/stations" for 10.0.2.2 at 2019-09-24 10:35:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::StationsController#index as HTML
+  Rendering admins/stations/index.html.erb within layouts/application
+  [1m[36mStation Load (5.0ms)[0m  [1m[34mSELECT DISTINCT "stations".* FROM "stations"[0m
+  ↳ app/views/admins/stations/index.html.erb:9
+  Rendered admins/stations/index.html.erb within layouts/application (31.1ms)
+  Rendered layouts/_admins_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (3.6ms)
+Completed 200 OK in 2145ms (Views: 2000.8ms | ActiveRecord: 5.0ms)
+
+
+  [1m[36mStation Load (9.6ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStation Load (5.0ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mStation Load (6.4ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mStation Load (6.4ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mStation Load (6.6ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mStation Load (7.6ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mStation Load (6.3ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]

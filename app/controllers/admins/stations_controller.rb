@@ -1,6 +1,8 @@
 class Admins::StationsController < ApplicationController
 	def index 
-		
+		@stations = Station.all
+		@q = Station.ransack(params[:q])
+  	@stations = @q.result(distinct: true)
 	end
 
 	def new
@@ -25,5 +27,10 @@ class Admins::StationsController < ApplicationController
 
 	def destroy
 		
+	end
+
+	private
+	def station_params
+		params.require(:station).permit(:name, :id, :address, :station_train)		
 	end
 end
