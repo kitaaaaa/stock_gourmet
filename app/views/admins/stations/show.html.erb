@@ -1,0 +1,11 @@
+<h1><%= @station.name %>駅</h1>
+
+<h2>交通アクセス</h2>
+<% @station.station_trains.each do |s_t| %>
+	<p><%= s_t.train.name %></p>
+<% end %>
+
+<p><%= @station.address %></p>
+
+		<%= link_to '編集', edit_admins_station_path(@station.id) %>
+		<%= link_to '駅一覧へ戻る', admins_stations_path %>

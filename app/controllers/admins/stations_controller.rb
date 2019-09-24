@@ -6,7 +6,7 @@ class Admins::StationsController < ApplicationController
 	end
 
 	def new
-		
+		@station = Station.new
 	end
 
 	def create
@@ -14,7 +14,8 @@ class Admins::StationsController < ApplicationController
 	end
 
 	def show
-		
+		@station = Station.find(params[:id])
+		@station_trains = @station.station_trains
 	end
 
 	def edit
