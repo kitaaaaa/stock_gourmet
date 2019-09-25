@@ -5,11 +5,12 @@
 <% end %>
 <div>
  <ul id="tab-menu" class="clearfix">
-	<li style="float: left;"><a href="#tab1" class="active">チェックリスト</a></li>
-	<li style="float: left;"><a href="#tab2">ユーザー情報</a></li>
+	<li style="float: left;"><a href="#tab1" class="active">お気に入りリスト</a></li>
 	<li style="float: left;"><a href="#tab3">フォローリスト</a></li>
 	<% if current_user.id == @user.id %>
+		<li style="float: left;"><a href="#tab2">ユーザー情報</a></li>
 		<li style="float: left;"><a href="#tab4">保存リスト</a></li>
+		<li style="float: left;"><%= link_to '新規追加', new_users_restaurant_path %></li>
 	<% end %>
  </ul>
  
@@ -22,7 +23,6 @@
   	<%= f.search_field :name_or_address_cont %>
   	<%= f.submit "検索" %>
 	 <% end %>
-	 <%= link_to '新規追加', new_users_restaurant_path %>
 
 	 <% @user.favorites.each do |favorite| %>
 		<div>
@@ -91,6 +91,7 @@
 	 	<% if current_user.id == @user.id %>
 		 <%= link_to 'ユーザー編集', edit_users_user_path(@user.id), class: "btn btn-success col-md-1" %>
 		<% end %>
+		<% if user_signed_in? %> 
 		<% unless current_user.id == @user.id %>
 		 <% if current_user.following?(@user) %>
     		<%= form_for(current_user.relationships.find_by(follow_id: @user.id), html: { method: :delete }, url: users_relationship_path(@user)) do |f| %>
@@ -106,6 +107,7 @@
     		<% end %>
 		 <% end %>
 		<% end %>
+		<% end %>
 	 </div>
 	</div>
 
@@ -120,7 +122,6 @@
 	 		 <div style="float: left;">
 				<p><%= link_to follower.name, users_user_path(follower) %></p>
 				<p><%= follower.introduction %></p>
-				<p>tag.name</p>
 				<% unless current_user.id == follower.id %>
 				 <% if current_user.following?(follower) %>
 					<%= form_for(follower, html: { method: :delete }, url: users_relationship_path(follower)) do |f| %>

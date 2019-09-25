@@ -9265,3 +9265,266 @@ Processing by Users::StationsController#show as HTML
 Completed 200 OK in 2910ms (Views: 2718.0ms | ActiveRecord: 32.6ms)
 
 
+Started GET "/users/users/1" for 10.0.2.2 at 2019-09-25 10:32:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/users/users_controller.rb:2:in `[]'
+app/controllers/users/users_controller.rb:2:in `<class:UsersController>'
+app/controllers/users/users_controller.rb:1:in `<top (required)>'
+Started GET "/users/users/1" for 10.0.2.2 at 2019-09-25 10:32:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/stock_gourmet/app/controllers/users/users_controller.rb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...tion :authenticate_user! except: [:show]
+...                         ^~~~~~):
+  
+app/controllers/users/users_controller.rb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started GET "/users/users/1" for 10.0.2.2 at 2019-09-25 10:33:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/stock_gourmet/app/controllers/users/users_controller.rb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+...tion :authenticate_user! except: :show
+...                         ^~~~~~):
+  
+app/controllers/users/users_controller.rb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started GET "/users/users/1" for 10.0.2.2 at 2019-09-25 10:35:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Users::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:5
+  [1m[36mStock Load (6.7ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."user_id" = ? AND "stocks"."restaurant_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:11
+  [1m[36mFavorite Load (6.8ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."restaurant_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:12
+  Rendering users/users/show.html.erb within layouts/application
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:1
+  [1m[36mFavorite Load (6.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/users/show.html.erb:27
+  [1m[36mRestaurant Load (6.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:29
+  [1m[36mStation Load (7.0ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:35
+  [1m[36mGenre Load (8.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:41
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:48
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "stocks" WHERE "stocks"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:52
+  [1m[36mRestaurant Load (10.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:29
+  [1m[36mStation Load (8.1ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:35
+  [1m[36mGenre Load (6.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:41
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/views/users/users/show.html.erb:48
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "stocks" WHERE "stocks"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/views/users/users/show.html.erb:52
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follow_id" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/users/show.html.erb:115
+  [1m[36mStock Load (8.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/users/show.html.erb:144
+  [1m[36mCACHE Restaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:146
+  [1m[36mCACHE Station Load (0.1ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:152
+  [1m[36mCACHE Genre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:158
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:165
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "stocks" WHERE "stocks"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:169
+  Rendered users/users/show.html.erb within layouts/application (19923.0ms)
+  Rendered layouts/_users_header.html.erb (5.9ms)
+  Rendered layouts/_footer.html.erb (3.0ms)
+Completed 200 OK in 24016ms (Views: 23152.8ms | ActiveRecord: 297.7ms)
+
+
+Started GET "/users/users/1" for 10.0.2.2 at 2019-09-25 10:40:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:5
+  [1m[36mStock Load (5.1ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."user_id" = ? AND "stocks"."restaurant_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:11
+  [1m[36mFavorite Load (9.6ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."restaurant_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:12
+  Rendering users/users/show.html.erb within layouts/application
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:1
+  [1m[36mFavorite Load (5.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/users/show.html.erb:27
+  [1m[36mRestaurant Load (6.8ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:29
+  [1m[36mStation Load (5.6ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:35
+  [1m[36mGenre Load (6.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:41
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:48
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "stocks" WHERE "stocks"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:52
+  [1m[36mRestaurant Load (4.7ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:29
+  [1m[36mStation Load (5.4ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:35
+  [1m[36mGenre Load (5.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:41
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/views/users/users/show.html.erb:48
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "stocks" WHERE "stocks"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/views/users/users/show.html.erb:52
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follow_id" WHERE "relationships"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mRestaurant Load (11.0ms)[0m  [1m[34mSELECT  DISTINCT "restaurants".* FROM "restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follow_id" WHERE "relationships"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Restaurant Load (0.1ms)[0m  [1m[34mSELECT  DISTINCT "restaurants".* FROM "restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follow_id" WHERE "relationships"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Restaurant Load (0.1ms)[0m  [1m[34mSELECT  DISTINCT "restaurants".* FROM "restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follow_id" WHERE "relationships"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Restaurant Load (0.1ms)[0m  [1m[34mSELECT  DISTINCT "restaurants".* FROM "restaurants" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered users/users/show.html.erb within layouts/application (1758.9ms)
+Completed 500 Internal Server Error in 2334ms (ActiveRecord: 107.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_sign_in?' for #<#<Class:0x0000559b46d64a98>:0x00007fb97c0aff68>):
+    91: 	 	<% if current_user.id == @user.id %>
+    92: 		 <%= link_to 'ユーザー編集', edit_users_user_path(@user.id), class: "btn btn-success col-md-1" %>
+    93: 		<% end %>
+    94: 		<% if user_sign_in? %> 
+    95: 		<% unless current_user.id == @user.id %>
+    96: 		 <% if current_user.following?(@user) %>
+    97:     		<%= form_for(current_user.relationships.find_by(follow_id: @user.id), html: { method: :delete }, url: users_relationship_path(@user)) do |f| %>
+  
+app/views/users/users/show.html.erb:94:in `_app_views_users_users_show_html_erb___723580433539291147_70217232918000'
+Started GET "/users/users/1" for 10.0.2.2 at 2019-09-25 10:41:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:5
+  [1m[36mStock Load (6.7ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."user_id" = ? AND "stocks"."restaurant_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:11
+  [1m[36mFavorite Load (10.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."restaurant_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:12
+  Rendering users/users/show.html.erb within layouts/application
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:1
+  [1m[36mFavorite Load (4.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/users/show.html.erb:27
+  [1m[36mRestaurant Load (5.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:29
+  [1m[36mStation Load (6.5ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:35
+  [1m[36mGenre Load (10.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:41
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:48
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "stocks" WHERE "stocks"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:52
+  [1m[36mRestaurant Load (5.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:29
+  [1m[36mStation Load (4.8ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:35
+  [1m[36mGenre Load (6.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:41
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/views/users/users/show.html.erb:48
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "stocks" WHERE "stocks"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/views/users/users/show.html.erb:52
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follow_id" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/users/show.html.erb:117
+  [1m[36mStock Load (5.6ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/users/show.html.erb:145
+  [1m[36mCACHE Restaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:147
+  [1m[36mCACHE Station Load (0.1ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:153
+  [1m[36mCACHE Genre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:159
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:166
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "stocks" WHERE "stocks"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:170
+  Rendered users/users/show.html.erb within layouts/application (388.3ms)
+  Rendered layouts/_users_header.html.erb (5.6ms)
+  Rendered layouts/_footer.html.erb (2.9ms)
+Completed 200 OK in 2919ms (Views: 2601.0ms | ActiveRecord: 113.6ms)
+
+
+Started GET "/users/users/1" for 10.0.2.2 at 2019-09-25 10:41:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:5
+  [1m[36mStock Load (5.4ms)[0m  [1m[34mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."user_id" = ? AND "stocks"."restaurant_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:11
+  [1m[36mFavorite Load (9.8ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."restaurant_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:12
+  Rendering users/users/show.html.erb within layouts/application
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:1
+  [1m[36mFavorite Load (7.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/users/show.html.erb:27
+  [1m[36mRestaurant Load (7.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:29
+  [1m[36mStation Load (4.7ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:35
+  [1m[36mGenre Load (7.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:41
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:48
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "stocks" WHERE "stocks"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:52
+  [1m[36mRestaurant Load (4.7ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:29
+  [1m[36mStation Load (4.5ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:35
+  [1m[36mGenre Load (5.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:41
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/views/users/users/show.html.erb:48
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "stocks" WHERE "stocks"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/views/users/users/show.html.erb:52
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follow_id" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/users/show.html.erb:117
+  [1m[36mStock Load (4.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/users/show.html.erb:145
+  [1m[36mCACHE Restaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:147
+  [1m[36mCACHE Station Load (0.6ms)[0m  [1m[34mSELECT  "stations".* FROM "stations" WHERE "stations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:153
+  [1m[36mCACHE Genre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/users/show.html.erb:159
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:166
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "stocks" WHERE "stocks"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/views/users/users/show.html.erb:170
+  Rendered users/users/show.html.erb within layouts/application (354.1ms)
+  Rendered layouts/_users_header.html.erb (5.7ms)
+  Rendered layouts/_footer.html.erb (2.7ms)
+Completed 200 OK in 2844ms (Views: 2571.4ms | ActiveRecord: 102.6ms)
+
+

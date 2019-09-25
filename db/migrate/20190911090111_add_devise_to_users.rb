@@ -11,7 +11,6 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
       t.string :telephone_number, null: false, default: ""
       t.string :image
       t.text :introduction, default: ""
-      t.integer :user_tag_id
       t.string :image_id
       #カラムにはrefileの使い方に習って後ろに_idをつけないといけない
 

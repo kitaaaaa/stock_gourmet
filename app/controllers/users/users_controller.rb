@@ -1,11 +1,10 @@
 class Users::UsersController < ApplicationController
-	before_action :authenticate_user![:show]
+	before_action :authenticate_user!, except: :show
 
 	def show
 		@user = User.find(params[:id])
 		@id = @user.id
 		@followers = @user.followings
-		@restaurants = Restaurant.all
 		@q = Restaurant.ransack(params[:q])
   	@restaurants = @q.result(distinct: true)
 		@stock = Stock.find_by(user: @user, restaurant: @restaurant)
