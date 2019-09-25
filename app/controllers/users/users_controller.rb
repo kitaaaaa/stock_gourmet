@@ -30,8 +30,8 @@ class Users::UsersController < ApplicationController
 
 	def destroy #論理削除
 		@user = User.find(params[:id])
-		@user.is_quit
-		redirect_to destroy_user_session_path
+		@user.destroy
+		redirect_to root_path
 	end
 
 	private
