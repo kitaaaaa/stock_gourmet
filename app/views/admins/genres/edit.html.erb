@@ -1,0 +1,15 @@
+			<h1><%= @genre.name %>の編集画面</h1>
+
+			<%= form_for(@genre, url: admins_genre_path(@genre.id)) do |f| %>
+				<div>
+					<%= f.label :name, "ジャンル名" %><br />
+					<%= f.text_field :name, autofocus: true, require: true %>
+				</div>
+
+				<div>
+					<%= f.submit "更新" %>
+				</div>
+			<% end %>
+
+			<%= link_to @genre.name + "の詳細へ戻る", admins_genre_path(@genre.id) %>
+			<%= link_to 'ジャンル一覧へ戻る', admins_genres_path %>

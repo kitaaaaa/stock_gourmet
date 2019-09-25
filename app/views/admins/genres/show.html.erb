@@ -1,0 +1,30 @@
+				<h1><%= @genre.name %></h1>
+				<p>このジャンルの店の数:<%= @genre.restaurants.count %></p>
+				<p>登録日：<%= @genre.updated_at.strftime('%Y/%m/%d') %></p>
+				<%= link_to '編集', edit_admins_genre_path(@genre.id) %>
+				<%= link_to "削除", admins_genre_path(@genre.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+				<% @genre.restaurants.each do |restaurant| %>
+					<div>
+						<h2><%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h2>
+						<table>
+			 			 <tbody>
+							<tr>
+								<td>最寄り駅：</td>
+								<td><%= link_to restaurant.station.name, admins_station_path(restaurant.station.id) %></td>
+								<td>予算：</td>
+								<td>￥<%= restaurant.budget %></td>
+							</tr>
+						 </tbody>
+						</table>
+						<table>
+			 			 <tbody>
+							<tr>
+								<td>この商品のお気に入り数：<%= restaurant.favorites.count %></td>
+							</tr>
+							<tr>
+								<td>この商品を保存した人たち：<%= restaurant.stocks.count %></td>
+							</tr>
+			 			 </tbody>
+						</table>
+					</div>
+				<% end %>
