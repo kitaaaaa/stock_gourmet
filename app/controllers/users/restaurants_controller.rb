@@ -30,7 +30,6 @@ class Users::RestaurantsController < ApplicationController
 	def new
 		@user = current_user
 		@restaurant = Restaurant.new
-		@menu = Menu.new
 		@station = Station.new
 		@genre = Genre.new
 	end
