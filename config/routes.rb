@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     root "admins#home"
 
   	resources :stations, except:[:destroy]
-  	resources :users, only:[:index, :show, :destroy,]
+  	resources :users, only:[:index, :show]
   	#usersのdestroyいるか？
     devise_for :admins, controllers: {
       sessions:      'admins/sessions',

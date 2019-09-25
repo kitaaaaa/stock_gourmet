@@ -7281,3 +7281,64 @@ ActionView::Template::Error (undefined method `name' for nil:NilClass):
     8: 		<dt>Emailアドレス</dt>
   
 app/views/admins/users/show.html.erb:5:in `_app_views_admins_users_show_html_erb__4394924570530652607_70341632379040'
+Started GET "/admins/users/1" for 10.0.2.2 at 2019-09-25 07:28:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admins::UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (6.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/users_controller.rb:8
+  Rendering admins/users/show.html.erb within layouts/application
+  Rendered admins/users/show.html.erb within layouts/application (3314.5ms)
+  Rendered layouts/_admins_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (11.9ms)
+Completed 200 OK in 7757ms (Views: 7286.3ms | ActiveRecord: 68.5ms)
+
+
+Started GET "/admins/stations" for 10.0.2.2 at 2019-09-25 07:29:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::StationsController#index as HTML
+  [1m[36mAdmin Load (5.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admins/stations/index.html.erb within layouts/application
+  [1m[36mStation Load (5.5ms)[0m  [1m[34mSELECT DISTINCT "stations".* FROM "stations"[0m
+  ↳ app/views/admins/stations/index.html.erb:10
+  Rendered admins/stations/index.html.erb within layouts/application (100.8ms)
+  Rendered layouts/_admins_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (3.3ms)
+Completed 200 OK in 2482ms (Views: 2227.2ms | ActiveRecord: 40.5ms)
+
+
+Started GET "/admins/stations?utf8=%E2%9C%93&q%5Bname_or_address_cont%5D=%E5%A4%A7&commit=%E6%A4%9C%E7%B4%A2" for 10.0.2.2 at 2019-09-25 07:29:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::StationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"name_or_address_cont"=>"大"}, "commit"=>"検索"}
+  [1m[36mAdmin Load (8.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admins/stations/index.html.erb within layouts/application
+  [1m[36mStation Load (4.9ms)[0m  [1m[34mSELECT DISTINCT "stations".* FROM "stations" WHERE ("stations"."name" LIKE '%大%' OR "stations"."address" LIKE '%大%')[0m
+  ↳ app/views/admins/stations/index.html.erb:10
+  Rendered admins/stations/index.html.erb within layouts/application (21.9ms)
+  Rendered layouts/_admins_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (3.4ms)
+Completed 200 OK in 2196ms (Views: 2043.1ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/admins/stations?utf8=%E2%9C%93&q%5Bname_or_address_cont%5D=%E7%9C%8C&commit=%E6%A4%9C%E7%B4%A2" for 10.0.2.2 at 2019-09-25 07:29:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::StationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"name_or_address_cont"=>"県"}, "commit"=>"検索"}
+  [1m[36mAdmin Load (5.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admins/stations/index.html.erb within layouts/application
+  [1m[36mStation Load (8.6ms)[0m  [1m[34mSELECT DISTINCT "stations".* FROM "stations" WHERE ("stations"."name" LIKE '%県%' OR "stations"."address" LIKE '%県%')[0m
+  ↳ app/views/admins/stations/index.html.erb:10
+  Rendered admins/stations/index.html.erb within layouts/application (23.5ms)
+  Rendered layouts/_admins_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (3.6ms)
+Completed 200 OK in 2602ms (Views: 2423.9ms | ActiveRecord: 14.1ms)
+
+
