@@ -1,0 +1,14 @@
+			<h1>新規ジャンルの作成画面</h1>
+
+			<%= form_for(@genre, url: admins_genres_path) do |f| %>
+				<div>
+					<%= f.label :name, "ジャンル名" %><br />
+					<%= f.text_field :name, autofocus: true, require: true %>
+				</div>
+
+    		<div>
+      		<%= f.submit "登録" %>
+      	</div>
+			<% end %>
+
+			<%= link_to 'ジャンル一覧へ戻る', admins_genres_path %>
