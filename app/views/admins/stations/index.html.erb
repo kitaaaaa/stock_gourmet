@@ -1,4 +1,4 @@
-<h1>駅一覧</h1>    
+<h1>駅の一覧画面</h1>    
          <%= link_to '新しい駅の追加', new_admins_station_path %>
 	 	<%= search_form_for(@q, url: admins_stations_path) do |f| %>
   		<%= f.label :name_or_address, "名前、住所で検索" %>
@@ -9,7 +9,9 @@
 			<tbody>
 				<% @stations.each do |station| %>
 					<tr>
+						<th>駅名</th>
 						<td><%= link_to station.name, admins_station_path(station.id) %></td>
+						<th>住所:</th>
 						<td><%= station.address %></td>
 					</tr>
 				<% end %>

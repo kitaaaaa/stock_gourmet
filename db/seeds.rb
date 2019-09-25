@@ -30,14 +30,9 @@ station_names = %w(大宮 川越 渋谷 池袋 松戸 横浜 表参道 六本木
 
 #A.zip(B).each do |c|で、AとBの配列の最前列から表示する
 train_names.zip(station_names).each do |train_name, station_name|
-#	puts "train", train_names
-#	puts "zip", train_names.zip(station_names)
 	station = Station.create(name: station_name)
-#	puts station
 	train = Train.create(name: train_name)
-#	puts train
 	station_train = StationTrain.create!(station_id: station.id, train_id: train.id)
-#	puts station_train
 end
 
 restaurants = %w[次郎 スタバ ゴンチャ ターリー屋 武道家 JSバーガー tacobel shakeshack 慎 はま寿司 長崎チャンポン]
@@ -50,4 +45,8 @@ station_names.zip(genre_names).each do |station_name, genre_name|
 
 end
 
-Admin.create!(name: "rr", email: rr@rr, password: rrrrrrrr)
+
+Admin.create!(name: "rr", email: "rr@rr", telephone_number: "33344445555", password: "rrrrrrrr")
+#本番環境では、コンソールで設定
+
+
