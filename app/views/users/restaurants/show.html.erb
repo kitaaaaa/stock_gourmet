@@ -15,12 +15,6 @@
 			<td>￥<%= @restaurant.budget %></td>
 		</tr>
 		</table>
-		<div class="clearfix">
-			<p style="float: left;">タグ：</p>
-			<p style="border: solid 1px; float: left;">ラーメン</p>
-			<p style="border: solid 1px; float: left;">ラーメン</p>
-			<p style="border: solid 1px; float: left;">ラーメン</p>
-		</div>
 		<p>〒<%= @restaurant.postal_code %> <%= @restaurant.address %></p>
 		<%= attachment_image_tag @restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
 

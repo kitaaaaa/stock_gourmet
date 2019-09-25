@@ -1,4 +1,6 @@
 class Users::StocksController < ApplicationController
+	before_action :authenticate_user!
+	
 	def create
 		restaurant = Restaurant.find(params[:restaurant_id])
 		stock = current_user.stocks.new(restaurant_id: restaurant.id)

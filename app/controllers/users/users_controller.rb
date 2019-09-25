@@ -1,9 +1,10 @@
 class Users::UsersController < ApplicationController
+	before_action :authenticate_user!, except: :show
+
 	def show
 		@user = User.find(params[:id])
 		@id = @user.id
 		@followers = @user.followings
-		@restaurants = Restaurant.all
 		@q = Restaurant.ransack(params[:q])
   	@restaurants = @q.result(distinct: true)
 		@stock = Stock.find_by(user: @user, restaurant: @restaurant)
@@ -29,8 +30,8 @@ class Users::UsersController < ApplicationController
 
 	def destroy #論理削除
 		@user = User.find(params[:id])
-		@user.is_quit
-		redirect_to destroy_user_session_path
+		@user.destroy
+		redirect_to root_path
 	end
 
 	private

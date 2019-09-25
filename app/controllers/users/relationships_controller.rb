@@ -1,5 +1,5 @@
 class Users::RelationshipsController < ApplicationController
-
+	before_action :authenticate_user!
 
 	def create
     	user = User.find(params[:follow_id])
@@ -13,14 +13,5 @@ class Users::RelationshipsController < ApplicationController
 		following = current_user.unfollow(user)
 		following.destroy
 		redirect_to users_user_path(user.id)
-    end
-
-    def index
-		@users = User.all
-		@user = User.find(params[:id])
-		@relationships = Relationships.all    	
-	end
-	
-	private
-
+  end
 end

@@ -1,4 +1,6 @@
 class Users::RestaurantsController < ApplicationController
+	before_action :authenticate_user!, except: [:index, :show]
+
 	def index
 		@restaurants = Restaurant.all
 		@q = Restaurant.ransack(params[:q])
@@ -28,7 +30,6 @@ class Users::RestaurantsController < ApplicationController
 	def new
 		@user = current_user
 		@restaurant = Restaurant.new
-		@menu = Menu.new
 		@station = Station.new
 		@genre = Genre.new
 	end
@@ -56,7 +57,7 @@ class Users::RestaurantsController < ApplicationController
 	def destroy
 		@restaurant = Restaurant.find(params[:id])
 		@restaurant.destroy
-		redirect_to root_path
+		redirect_to users_user_path(@user)
 	end
 
 	private

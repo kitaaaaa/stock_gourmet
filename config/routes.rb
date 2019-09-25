@@ -11,8 +11,6 @@ Rails.application.routes.draw do
     resources :stocks, only:[:create, :destroy]
   	resources :relationships, only:[:create, :destroy]
   	resources :stations, only:[:show]
-  	resources :tags, only:[:new, :create, :destroy, :update]
-  	#tagsのupdateいる？
   end
 
   namespace :admins do
