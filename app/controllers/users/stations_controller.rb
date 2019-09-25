@@ -2,7 +2,6 @@ class Users::StationsController < ApplicationController
 	def show
 		@user = current_user
 		@station = Station.find(params[:id])
-		@station_trains = @station.station_trains
 		@restaurant = @station.restaurants
 		@q = Restaurant.ransack(params[:q])
   	@restaurants = @q.result(distinct: true)

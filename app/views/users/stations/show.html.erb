@@ -1,10 +1,5 @@
 <h1><%= @station.name %>駅</h1>
 
-<h2>交通アクセス</h2>
-<% @station.station_trains.each do |s_t| %>
-	<p><%= s_t.train.name %></p>
-<% end %>
-
 <h2><%= @station.name %>の店たち</h2>
 	<%= search_form_for(@q, url: users_station_path(@station.id)) do |f| %>
 	  <%= f.label :name_or_address, "名前、住所で検索" %>
@@ -13,7 +8,7 @@
 	<% end %>
 	<% @station.restaurants.each do |restaurant| %>
 	<div>
-		<h3>rank, <%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h3>
+		<h3><%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h3>
 		<table>
 		<tr>
 			<td>最寄り駅：</td>
@@ -25,12 +20,6 @@
 			<td>ジャンル：</td>
 			<td><%= restaurant.genre.name %></td>
 		</table>
-		<div class="clearfix">
-			<p style="float: left;">タグ：</p>
-			<p style="border: solid 1px; float: left;">ラーメン</p>
-			<p style="border: solid 1px; float: left;">ラーメン</p>
-			<p style="border: solid 1px; float: left;">ラーメン</p>
-		</div>
 		<p>〒<%= restaurant.postal_code %> <%= restaurant.address %></p>
 		<img src="">
 	</div>
