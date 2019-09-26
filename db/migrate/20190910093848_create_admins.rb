@@ -40,6 +40,6 @@ class CreateAdmins < ActiveRecord::Migration[5.2]
     add_index :admins, :reset_password_token, unique: true
     # add_index :admins, :confirmation_token,   unique: true
     # add_index :admins, :unlock_token,         unique: true
-  endd
+  end
 end
 

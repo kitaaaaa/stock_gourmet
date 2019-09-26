@@ -9932,3 +9932,140 @@ DEPRECATION WARNING: Dangerous query method (method whose arguments are used as 
 Completed 200 OK in 2838ms (Views: 2469.4ms | ActiveRecord: 68.1ms)
 
 
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (34.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (41.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRestaurants (20190910093513)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "genre_id" integer NOT NULL, "budget" integer, "postal_code" varchar, "address" text, "station_id" integer NOT NULL, "latitude" float, "longitude" float, "image_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190910093513_create_restaurants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093513"]]
+  ↳ bin/rails:9
+  [1m[35m (24.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateGenres (20190910093633)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (25.5ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190910093633_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093633"]]
+  ↳ bin/rails:9
+  [1m[35m (18.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateStations (20190910093645)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE "stations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "address" varchar DEFAULT '' NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190910093645_create_stations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (4.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093645"]]
+  ↳ bin/rails:9
+  [1m[35m (19.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateRelationships (20190910093728)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE "relationships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "follow_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_a3d77c3b00"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_be1f05b3d7"
+FOREIGN KEY ("follow_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_relationships_on_follow_id" ON "relationships" ("follow_id")[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_relationships_on_user_id_and_follow_id" ON "relationships" ("user_id", "follow_id")[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093728"]]
+  ↳ bin/rails:9
+  [1m[35m (18.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateFavorites (20190910093802)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "restaurant_id" integer, CONSTRAINT "fk_rails_d15744e438"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_287d36f897"
+FOREIGN KEY ("restaurant_id")
+  REFERENCES "restaurants" ("id")
+)[0m
+  ↳ db/migrate/20190910093802_create_favorites.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_user_id" ON "favorites" ("user_id")[0m
+  ↳ db/migrate/20190910093802_create_favorites.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_restaurant_id" ON "favorites" ("restaurant_id")[0m
+  ↳ db/migrate/20190910093802_create_favorites.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (10.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093802"]]
+  ↳ bin/rails:9
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20190910093848)
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20190910093848)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190910093848_create_admins.rb:3
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190910093848_create_admins.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  ↳ db/migrate/20190910093848_create_admins.rb:39
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  ↳ db/migrate/20190910093848_create_admins.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (4.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093848"]]
+  ↳ bin/rails:9
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateStocks (20190922084701)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (27.2ms)[0m  [1m[35mCREATE TABLE "stocks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "restaurant_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190922084701_create_stocks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190922084701"]]
+  ↳ bin/rails:9
+  [1m[35m (19.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20190926053832)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (20.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "name" varchar DEFAULT '' NOT NULL, "telephone_number" varchar DEFAULT '' NOT NULL, "image" varchar, "introduction" text DEFAULT '', "image_id" varchar, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar)[0m
+  ↳ db/migrate/20190926053832_devise_create_users.rb:5
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190926053832_devise_create_users.rb:47
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190926053832_devise_create_users.rb:48
+  [1m[36mActiveRecord::SchemaMigration Create (5.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190926053832"]]
+  ↳ bin/rails:9
+  [1m[35m (23.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (5.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (24.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-26 05:44:45.907092"], ["updated_at", "2019-09-26 05:44:45.907092"]]
+  ↳ bin/rails:9
+  [1m[35m (19.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
