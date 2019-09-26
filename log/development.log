@@ -9663,3 +9663,574 @@ SyntaxError (/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:16
   
 app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
 app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/users/1/withdrawal" for 10.0.2.2 at 2019-09-25 11:13:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Users::UsersController#withdrawal as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:28
+  Rendering users/users/withdrawal.html.erb within layouts/application
+  Rendered users/users/withdrawal.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 642ms (ActiveRecord: 38.3ms)
+
+
+  
+SyntaxError (/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+...当に退会しますか？"　);@output_buffer.safe_append='
+...                            ^~~
+/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+...る", users_user_path(@user)　);@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/users/1/withdrawal" for 10.0.2.2 at 2019-09-25 11:15:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#withdrawal as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:28
+  Rendering users/users/withdrawal.html.erb within layouts/application
+  Rendered users/users/withdrawal.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 521ms (ActiveRecord: 10.3ms)
+
+
+  
+SyntaxError (/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+...当に退会しますか？"　);@output_buffer.safe_append='
+...                            ^~~
+/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+...る", users_user_path(@user)　);@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/users/1/withdrawal" for 10.0.2.2 at 2019-09-25 11:23:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#withdrawal as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:28
+  Rendering users/users/withdrawal.html.erb within layouts/application
+  Rendered users/users/withdrawal.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 572ms (ActiveRecord: 16.6ms)
+
+
+  
+SyntaxError (/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+...当に退会しますか？"}　);@output_buffer.safe_append='
+...                             ^~~
+/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+...る", users_user_path(@user)　);@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/users/1/withdrawal" for 10.0.2.2 at 2019-09-25 11:25:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#withdrawal as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:28
+  Rendering users/users/withdrawal.html.erb within layouts/application
+  Rendered users/users/withdrawal.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 528ms (ActiveRecord: 13.4ms)
+
+
+  
+SyntaxError (/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+...当に退会しますか？"　);@output_buffer.safe_append='
+...                            ^~~
+/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+...", users_user_path(@user.id)　);@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/users/1/withdrawal" for 10.0.2.2 at 2019-09-25 11:25:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#withdrawal as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:28
+  Rendering users/users/withdrawal.html.erb within layouts/application
+  Rendered users/users/withdrawal.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 522ms (ActiveRecord: 11.1ms)
+
+
+  
+SyntaxError (/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+...当に退会しますか？"　);@output_buffer.safe_append='
+...                            ^~~
+/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+...", users_user_path(@user.id)　);@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/users/1/withdrawal" for 10.0.2.2 at 2019-09-25 11:30:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#withdrawal as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:28
+  Rendering users/users/withdrawal.html.erb within layouts/application
+  Rendered users/users/withdrawal.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 467ms (ActiveRecord: 13.2ms)
+
+
+  
+SyntaxError (/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+...当に退会しますか？"}　);@output_buffer.safe_append='
+...                             ^~~
+/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+...", users_user_path(@user.id)　);@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/users/1/withdrawal" for 10.0.2.2 at 2019-09-25 11:31:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#withdrawal as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:28
+  Rendering users/users/withdrawal.html.erb within layouts/application
+  Rendered users/users/withdrawal.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 620ms (ActiveRecord: 17.1ms)
+
+
+  
+SyntaxError (/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+...当に退会しますか？"}　);@output_buffer.safe_append='
+...                             ^~~
+/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+...", users_user_path(@user.id)　);@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/users/1/withdrawal" for 10.0.2.2 at 2019-09-25 11:32:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#withdrawal as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:28
+  Rendering users/users/withdrawal.html.erb within layouts/application
+  Rendered users/users/withdrawal.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 523ms (ActiveRecord: 10.5ms)
+
+
+  
+SyntaxError (/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+...？"}, class:"btn btn-danger"　);@output_buffer.safe_append='
+...                             ^~~
+/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+...", users_user_path(@user.id)　);@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/users/1/withdrawal" for 10.0.2.2 at 2019-09-25 11:37:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#withdrawal as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:28
+  Rendering users/users/withdrawal.html.erb within layouts/application
+  Rendered users/users/withdrawal.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 607ms (ActiveRecord: 12.1ms)
+
+
+  
+SyntaxError (/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+...？"}, class:"btn btn-danger"　);@output_buffer.safe_append='
+...                             ^~~
+/vagrant/stock_gourmet/app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+...", users_user_path(@user.id)　);@output_buffer.safe_append='
+...                            ^~~):
+  
+app/views/users/users/withdrawal.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/users/withdrawal.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/users/1/withdrawal" for 10.0.2.2 at 2019-09-25 11:39:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#withdrawal as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:28
+  Rendering users/users/withdrawal.html.erb within layouts/application
+  Rendered users/users/withdrawal.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_users_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (2.9ms)
+Completed 200 OK in 8553ms (Views: 8407.6ms | ActiveRecord: 9.5ms)
+
+
+Started DELETE "/users/users/1" for 10.0.2.2 at 2019-09-25 11:40:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"f51Sm33mMItfbdKWCtYYgvBGMAezMCJ+gaWOz3dnoiyTqI3vL6mIxkZlk2RGBZXsHt7q3UFKwVLut6bspLes9Q==", "id"=>"1"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/users_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/users_controller.rb:33
+  [1m[36mFavorite Load (1.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users/users_controller.rb:33
+  [1m[36mFavorite Destroy (16.1ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/users/users_controller.rb:33
+  [1m[36mFavorite Destroy (0.7ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/users/users_controller.rb:33
+  [1m[36mStock Load (1.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users/users_controller.rb:33
+  [1m[36mStock Destroy (3.8ms)[0m  [1m[31mDELETE FROM "stocks" WHERE "stocks"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/users/users_controller.rb:33
+  [1m[36mUser Destroy (5.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/users/users_controller.rb:33
+  [1m[35m (23.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/users_controller.rb:33
+Redirected to http://localhost:3000/
+Completed 302 Found in 544ms (ActiveRecord: 71.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2019-09-25 11:40:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RestaurantsController#index as HTML
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users/restaurants_controller.rb:9
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(restaurant_id) desc". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from index at /vagrant/stock_gourmet/app/controllers/users/restaurants_controller.rb:14)
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT  "favorites"."restaurant_id" FROM "favorites" GROUP BY "favorites"."restaurant_id" ORDER BY count(restaurant_id) desc LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/controllers/users/restaurants_controller.rb:14
+  Rendering users/restaurants/index.html.erb within layouts/application
+  [1m[36mStation Load (7.5ms)[0m  [1m[34mSELECT DISTINCT "stations".* FROM "stations"[0m
+  ↳ app/views/users/restaurants/index.html.erb:8
+  Rendered users/restaurants/index.html.erb within layouts/application (105.0ms)
+  Rendered layouts/_users_header.html.erb (7.0ms)
+  Rendered layouts/_footer.html.erb (2.5ms)
+Completed 200 OK in 2838ms (Views: 2469.4ms | ActiveRecord: 68.1ms)
+
+
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (34.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (41.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRestaurants (20190910093513)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "genre_id" integer NOT NULL, "budget" integer, "postal_code" varchar, "address" text, "station_id" integer NOT NULL, "latitude" float, "longitude" float, "image_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190910093513_create_restaurants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093513"]]
+  ↳ bin/rails:9
+  [1m[35m (24.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateGenres (20190910093633)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (25.5ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190910093633_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093633"]]
+  ↳ bin/rails:9
+  [1m[35m (18.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateStations (20190910093645)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE "stations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "address" varchar DEFAULT '' NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190910093645_create_stations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (4.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093645"]]
+  ↳ bin/rails:9
+  [1m[35m (19.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateRelationships (20190910093728)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE "relationships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "follow_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_a3d77c3b00"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_be1f05b3d7"
+FOREIGN KEY ("follow_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_relationships_on_follow_id" ON "relationships" ("follow_id")[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_relationships_on_user_id_and_follow_id" ON "relationships" ("user_id", "follow_id")[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093728"]]
+  ↳ bin/rails:9
+  [1m[35m (18.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateFavorites (20190910093802)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "restaurant_id" integer, CONSTRAINT "fk_rails_d15744e438"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_287d36f897"
+FOREIGN KEY ("restaurant_id")
+  REFERENCES "restaurants" ("id")
+)[0m
+  ↳ db/migrate/20190910093802_create_favorites.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_user_id" ON "favorites" ("user_id")[0m
+  ↳ db/migrate/20190910093802_create_favorites.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_restaurant_id" ON "favorites" ("restaurant_id")[0m
+  ↳ db/migrate/20190910093802_create_favorites.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (10.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093802"]]
+  ↳ bin/rails:9
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20190910093848)
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20190910093848)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190910093848_create_admins.rb:3
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190910093848_create_admins.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  ↳ db/migrate/20190910093848_create_admins.rb:39
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  ↳ db/migrate/20190910093848_create_admins.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (4.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093848"]]
+  ↳ bin/rails:9
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateStocks (20190922084701)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (27.2ms)[0m  [1m[35mCREATE TABLE "stocks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "restaurant_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190922084701_create_stocks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190922084701"]]
+  ↳ bin/rails:9
+  [1m[35m (19.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20190926053832)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (20.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "name" varchar DEFAULT '' NOT NULL, "telephone_number" varchar DEFAULT '' NOT NULL, "image" varchar, "introduction" text DEFAULT '', "image_id" varchar, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar)[0m
+  ↳ db/migrate/20190926053832_devise_create_users.rb:5
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190926053832_devise_create_users.rb:47
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190926053832_devise_create_users.rb:48
+  [1m[36mActiveRecord::SchemaMigration Create (5.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190926053832"]]
+  ↳ bin/rails:9
+  [1m[35m (23.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (5.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (24.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-26 05:44:45.907092"], ["updated_at", "2019-09-26 05:44:45.907092"]]
+  ↳ bin/rails:9
+  [1m[35m (19.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateAdmins (20190926061227)
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190926061227_devise_create_admins.rb:5
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "name" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190926061227_devise_create_admins.rb:5
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateAdmins (20190926061227)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190926061227_devise_create_admins.rb:5
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "name" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190926061227_devise_create_admins.rb:5
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateAdmins (20190926061227)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190926061227_devise_create_admins.rb:5
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "name" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190926061227_devise_create_admins.rb:5
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (28.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (41.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRestaurants (20190910093513)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "genre_id" integer NOT NULL, "budget" integer, "postal_code" varchar, "address" text, "station_id" integer NOT NULL, "latitude" float, "longitude" float, "image_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190910093513_create_restaurants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093513"]]
+  ↳ bin/rails:9
+  [1m[35m (21.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateGenres (20190910093633)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (27.2ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190910093633_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093633"]]
+  ↳ bin/rails:9
+  [1m[35m (18.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateStations (20190910093645)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (20.0ms)[0m  [1m[35mCREATE TABLE "stations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT '' NOT NULL, "address" varchar DEFAULT '' NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190910093645_create_stations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (6.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093645"]]
+  ↳ bin/rails:9
+  [1m[35m (17.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateRelationships (20190910093728)
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (21.1ms)[0m  [1m[35mCREATE TABLE "relationships" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "follow_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_a3d77c3b00"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_be1f05b3d7"
+FOREIGN KEY ("follow_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_relationships_on_follow_id" ON "relationships" ("follow_id")[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_relationships_on_user_id_and_follow_id" ON "relationships" ("user_id", "follow_id")[0m
+  ↳ db/migrate/20190910093728_create_relationships.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093728"]]
+  ↳ bin/rails:9
+  [1m[35m (23.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateFavorites (20190910093802)
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "restaurant_id" integer, CONSTRAINT "fk_rails_d15744e438"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_287d36f897"
+FOREIGN KEY ("restaurant_id")
+  REFERENCES "restaurants" ("id")
+)[0m
+  ↳ db/migrate/20190910093802_create_favorites.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_user_id" ON "favorites" ("user_id")[0m
+  ↳ db/migrate/20190910093802_create_favorites.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_restaurant_id" ON "favorites" ("restaurant_id")[0m
+  ↳ db/migrate/20190910093802_create_favorites.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190910093802"]]
+  ↳ bin/rails:9
+  [1m[35m (23.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateStocks (20190922084701)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (20.8ms)[0m  [1m[35mCREATE TABLE "stocks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "restaurant_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190922084701_create_stocks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190922084701"]]
+  ↳ bin/rails:9
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20190926053832)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (18.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "name" varchar DEFAULT '' NOT NULL, "telephone_number" varchar DEFAULT '' NOT NULL, "image" varchar, "introduction" text DEFAULT '', "image_id" varchar, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar)[0m
+  ↳ db/migrate/20190926053832_devise_create_users.rb:5
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190926053832_devise_create_users.rb:47
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190926053832_devise_create_users.rb:48
+  [1m[36mActiveRecord::SchemaMigration Create (3.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190926053832"]]
+  ↳ bin/rails:9
+  [1m[35m (17.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateAdmins (20190926061227)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (23.8ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "name" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190926061227_devise_create_admins.rb:5
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  ↳ db/migrate/20190926061227_devise_create_admins.rb:39
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  ↳ db/migrate/20190926061227_devise_create_admins.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (5.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190926061227"]]
+  ↳ bin/rails:9
+  [1m[35m (18.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (8.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (18.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-26 06:26:04.238632"], ["updated_at", "2019-09-26 06:26:04.238632"]]
+  ↳ bin/rails:9
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

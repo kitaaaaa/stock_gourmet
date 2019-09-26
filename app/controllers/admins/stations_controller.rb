@@ -9,8 +9,6 @@ class Admins::StationsController < ApplicationController
 
 	def new
 		@station = Station.new
-		#@station_train = StationTrain.new
-		#@train = Train.new
 	end
 
 	def create
@@ -24,8 +22,6 @@ class Admins::StationsController < ApplicationController
 
 	def show
 		@station = Station.find(params[:id])
-		#@train = Train.all
-		#@station_trains = StationTrain.all
 	end
 
 	def edit
