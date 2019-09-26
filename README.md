@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+name: StockGourmet
+overview: 
+	・あなたのお気に入りをここにStock(ストック)しよう。
+	・あなたが求めるGourmet(グルメ)を探しに行こう。
+description:
+	

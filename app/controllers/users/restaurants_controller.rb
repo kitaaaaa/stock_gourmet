@@ -5,17 +5,15 @@ class Users::RestaurantsController < ApplicationController
 		@restaurants = Restaurant.all
 		@q = Restaurant.ransack(params[:q])
   	@restaurants = @q.result(distinct: true)
-		@users = User.all
 		@user = current_user
+		#駅 + 駅の検索用(11-13行)
 		@stations = Station.all
 		@q = Station.ransack(params[:q])
   	@stations = @q.result(distinct: true)
   	@favorites = Favorite.all
 		@all_ranks = Restaurant.find(Favorite.group(:restaurant_id).order('count(restaurant_id) desc').limit(10).pluck(:restaurant_id))
-		#A.group(x)でAが持つ同じｘでグループ分け
-		#restaurant内で数(count)が多い順に(desc)に並べる
-		#limit(r)で、表示数をr個までに
-		#pluck(t)で、tを数字のみ獲得
+		#1.A.group(x)でAが持つ同じｘでグループ分け, 2.restaurant内で数(count)が多い順に(desc)に並べる
+		#3.limit(r)で、表示数をr個までに, 4.pluck(t)で、tを数字のみ獲得
 	end
 
 	def show

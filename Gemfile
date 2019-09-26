@@ -44,6 +44,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.6'
+  gem 'spring-commands-rspec'
+  #上記はテスト時間の短縮
 end
 
 group :development do
