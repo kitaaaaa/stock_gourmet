@@ -1,11 +1,12 @@
-class CreateAdmins < ActiveRecord::Migration[5.2]
+# frozen_string_literal: true
+
+class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
   def change
     create_table :admins do |t|
       ## Database authenticatable
-      t.string :name, null: false
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-
+      t.string :name, null: false, default: ""
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
@@ -14,12 +15,11 @@ class CreateAdmins < ActiveRecord::Migration[5.2]
       t.datetime :remember_created_at
 
       ## Trackable
-      # feature-devise-1
-      t.integer  :sign_in_count, default: 0, null: false
-      t.datetime :current_sign_in_at
-      t.datetime :last_sign_in_at
-      t.string   :current_sign_in_ip
-      t.string   :last_sign_in_ip
+      # t.integer  :sign_in_count, default: 0, null: false
+      # t.datetime :current_sign_in_at
+      # t.datetime :last_sign_in_at
+      # t.string   :current_sign_in_ip
+      # t.string   :last_sign_in_ip
 
       ## Confirmable
       # t.string   :confirmation_token
@@ -42,4 +42,3 @@ class CreateAdmins < ActiveRecord::Migration[5.2]
     # add_index :admins, :unlock_token,         unique: true
   end
 end
-
