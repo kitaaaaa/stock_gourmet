@@ -1,11 +1,2 @@
-warning: Cannot merge binary files: db/development.sqlite3 (HEAD vs. develop)
-CONFLICT (add/add): Merge conflict in tmp/cache/bootsnap-load-path-cache
-Auto-merging tmp/cache/bootsnap-load-path-cache
-CONFLICT (add/add): Merge conflict in log/development.log
-Auto-merging log/development.log
-Auto-merging db/seeds.rb
-CONFLICT (add/add): Merge conflict in db/development.sqlite3
-Auto-merging db/development.sqlite3
-
-CONFLICT (content): Merge conflict in app/views/users/restaurants/index.html.erb
-Automatic merge failed; fix conflicts and then commit the result.
+pending "add some examples to (or delete) #{__FILE__}"
+user_spec

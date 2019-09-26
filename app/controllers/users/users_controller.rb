@@ -29,8 +29,8 @@ class Users::UsersController < ApplicationController
 	end
 
 	def destroy #論理削除
-		@user = User.find(params[:id])
-		@user.destroy
+		user = User.find(params[:id])
+		user.destroy
 		redirect_to root_path
 	end
 
