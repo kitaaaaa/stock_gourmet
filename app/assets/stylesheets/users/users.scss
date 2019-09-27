@@ -1,3 +1,53 @@
 // Place all the styles related to the users/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1{
+	margin: 30px;
+	background-color: white;
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 10px
+}
+
+li{
+	float: left;
+	margin: 15px 0;
+	background-color: white;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+h2{
+	margin: 30px;
+	background-color: white;
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 10px
+}
+
+.restaurant{
+	margin: 30px;
+	background-color: white;
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 10px;
+}
+
+.userbox{
+	margin: 30px;
+	background-color: white;
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 10px;	
+}
+
+.user-image{
+	float:left;
+	margin: 30px;
+}
+
+.box-right{
+	float:left;
+	margin: 30px;
+}

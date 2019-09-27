@@ -25,3 +25,50 @@
 li{
 	list-style: none;
 }
+
+.navbar-header{
+	float: left;
+	background-color: white;
+	padding: 8px;
+	border: 1px solid white;
+	border-radius: 10px;
+	margin: 15px;
+	text-align: center;
+}
+
+.navbar-right li{
+	float: left;
+	margin: 15px;
+	background-color: white;
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 10px;
+}
+
+
+
+.col-md-offset-3{
+	text-align: center;
+	background-color: orange;
+	border: 1px solid white;
+	border-radius: 15px;
+	padding: 20px;
+}
+
+.field{
+	margin-top: 20px;
+}
+
+.actions{
+	margin: 20px 0;
+}
+
+.search{
+	margin: 40px 0;
+	background-color: silver;
+	padding: 5px;
+	border: 1px solid silver;
+	border-radius: 10px;
+	width: 80%;
+	margin: 0 auto;
+}
