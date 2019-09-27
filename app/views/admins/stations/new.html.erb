@@ -1,0 +1,19 @@
+			<h1>新規駅の作成画面</h1>
+
+			<%= form_for(@station, url: admins_stations_path) do |f| %>
+				<div>
+					<%= f.label :name, "駅名" %><br />
+					<%= f.text_field :name, autofocus: true, require: true %>
+				</div>
+
+    		<div>
+    			<%= f.label :address, "住所" %><br />
+     			<%= f.text_area :address, autofocus: true %>
+    		</div>
+
+    		<div>
+      		<%= f.submit "登録" %>
+      		</div>
+			<% end %>
+
+			<%= link_to '駅一覧へ戻る', admins_stations_path %>

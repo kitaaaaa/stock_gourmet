@@ -13,4 +13,23 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery 
+//= require jquery_ujs
 //= require_tree .
+//= require bootstrap
+
+$(function(){
+	$('#tab-contents .tab[id != "tab1"]').hide();
+//'click'されたとき{}内の処理が発生.
+$('#tab-menu a').on('click', function() {
+	console.log("aaa")
+  $("#tab-contents .tab").hide();
+  //removeClass("X"); HTML要素の属性(X)を削除
+  $("#tab-menu .active").removeClass("active");
+  //this=タブがクリックされたとき
+  $(this).addClass("active");
+  //.attr(X)は、HTML要素の属性(X)を取得や設定をする
+  $($(this).attr("href")).show();
+  return false;
+});
+})

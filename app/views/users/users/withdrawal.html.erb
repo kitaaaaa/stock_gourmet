@@ -1,0 +1,19 @@
+<div>
+  <!-- strongは強調、strong>em -->
+  <h1><strong>退会に関する説明</strong></h1>
+    <p><strong>*stock gourmet会員退会前に、以下注意事項を必ずご確認ください。</strong></p>
+  <h2><strong>退会時の注意点</strong></h2>
+  <ul>
+    <li>
+        退会後はマイページが閲覧できなくなります。ご注意ください。
+    </li>
+    <li>再度会員登録いただいても、閲覧いただけません。
+    </li>
+    <li>ユーザーの方は、管理者にコンテンツが削除されて良いかをご確認ください。</li>
+  </ul>
+
+  <div>
+    <%= link_to "退会する", users_user_path(@user.id), method: :delete, data: {confirm: "本当に退会しますか？"}, class:"btn btn-danger" %>
+        <%= link_to "戻る", users_user_path(@user.id) %>
+  </div>
+</div>

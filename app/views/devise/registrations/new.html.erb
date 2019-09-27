@@ -1,0 +1,47 @@
+<div class="container min-height">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2>StockGourmetアカウント登録</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :name, "アカウント名" %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
+      <!-- autofocus: trueは自動フォーカスを指定 -->
+      <!-- autocomplete:は候補の単語を表示 -->
+
+      <div class="field">
+        <%= f.label :telephone_number, "電話番号" %><br />
+        <%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number" %>
+      </div>
+      <!-- deviseにフォームを追加するには、application/controllerに記入 -->
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "登録" %>
+      </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

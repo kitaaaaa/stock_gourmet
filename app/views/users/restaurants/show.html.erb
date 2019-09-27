@@ -1,0 +1,90 @@
+<div>
+	<h1><%= @restaurant.name %></h1>
+	<div>
+		<table>
+		<tr>
+			<td>ジャンル：</td>
+			<td><%= @restaurant.genre.name %></td>
+		</tr>
+		<tr>
+			<td>最寄り駅：</td>
+			<td><%= link_to @restaurant.station.name, users_station_path(@restaurant.station.id) %></td>
+		</tr>
+		<tr>
+			<td>予算：</td>
+			<td>￥<%= @restaurant.budget %></td>
+		</tr>
+		</table>
+		<p>〒<%= @restaurant.postal_code %> <%= @restaurant.address %></p>
+		<%= attachment_image_tag @restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
+
+		<%= link_to '編集', edit_users_restaurant_path(@restaurant.id) %>
+		<%= link_to 'トップ画面へ戻る', root_path %>
+			<table>
+			 <tbody>
+				<tr>
+					<td>この商品のお気に入り数：<%= @restaurant.favorites.count %></td>
+					<td>
+						<% if @favorite.present? %>
+						 <%= link_to "お気に入りの解除", users_favorite_path(@favorite), :method => :delete %>
+							 <!-- methodに指定がないときは、デフォルトでgetになる。 -->
+						<% else %>
+						 <%= link_to "お気に入りに追加", users_favorites_path(restaurant_id: @restaurant.id ), :method => :post %>
+						<% end %>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						この商品をストックした人たち：<%= @restaurant.stocks.count %>
+					</td>
+					<td>
+						<% if @stock.present? %>
+						 <%= link_to "ストックの解除", users_stock_path(@stock), :method => :delete %>
+						<% else %>
+						 <%= link_to "ストックリストに追加", users_stocks_path(restaurant_id: @restaurant.id ), :method => :post %>
+						<% end %>
+					</td>
+				</tr>
+			 </tbody>
+			</table>
+	</div>
+		
+	<div>
+		<div id="map"></div>
+		<style>
+			#map{
+			  height: 400px;
+			}
+		</style>
+
+		<script>
+			function initMap() {
+			  var target = document.getElementById('map'); //マップを表示する要素を指定
+			  var address ='<%= @restaurant.address %>'; //住所を指定
+			  var geocoder = new google.maps.Geocoder();  
+
+				geocoder.geocode({ address: address }, function(results, status){
+				if (status === 'OK' && results[0]){
+					console.log(results[0].geometry.location);
+    				var map = new google.maps.Map(target, {  
+        			 center: results[0].geometry.location,
+        			 zoom: 18
+    				});
+    				//ピン止め
+    				var marker = new google.maps.Marker({
+    				 position: results[0].geometry.location,
+        			 map: map,
+        			 animation: google.maps.Animation.DROP
+    				});
+				}else{ 
+    				//住所が存在しない場合の処理
+    				alert('住所が正しくないか存在しません。');
+    				 target.style.display='none';
+    				}
+  				});
+			}
+		</script>
+	</div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKo2dKiuRl-Jz67szLgRlRZFpGJOugF7g&callback=initMap" async defer></script>

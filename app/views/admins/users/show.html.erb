@@ -1,0 +1,20 @@
+	<h1>ユーザーの詳細画面</h1>
+	<%= attachment_image_tag @user, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
+	<div>
+		<dt>名前</dt>
+		<dd><%= @user.name %></dd>
+	</div>
+	<div>
+		<dt>Emailアドレス</dt>
+		<dd><%= @user.email %></dd>
+	</div>
+	<div>
+		<dt>電話番号</dt>
+		<dd><%= @user.telephone_number %></dd>
+	</div>
+	<div>
+		<dt><%= @user.name %>の自己紹介</dt>
+		<dd><%= @user.introduction %></dd>
+	</div>
+
+	<%= link_to 'ユーザー一覧画面', admins_users_path %>
