@@ -16,6 +16,7 @@
 //= require jquery 
 //= require jquery_ujs
 //= require_tree .
+//= require bootstrap
 
 $(function(){
 	$('#tab-contents .tab[id != "tab1"]').hide();

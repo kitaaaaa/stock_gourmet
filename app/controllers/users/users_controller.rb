@@ -45,5 +45,6 @@ class Users::UsersController < ApplicationController
     @user = User.find_by(params[:id])
     if @user.id != @current_user.id
       redirect_to root_path
+  	end
   end
 end
