@@ -1,4 +1,3 @@
 class Station < ApplicationRecord
-	belongs_to :train
-	has_many :restaurant
+	has_many :restaurants
 end

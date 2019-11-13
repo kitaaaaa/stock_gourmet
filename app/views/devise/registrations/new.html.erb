@@ -1,47 +1,22 @@
 <div class="container min-height">
   <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8" style="background-color: orange;">
-      <h2>新規アカウント登録</h2>
+    <div class="col-md-6 col-md-offset-3">
+      <h2>StockGourmetアカウント登録</h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :family_name, "姓" %><br />
-        <%= f.text_field :family_name, autofocus: true, autocomplete: "family_name" %>
+        <%= f.label :name, "アカウント名" %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
       </div>
       <!-- autofocus: trueは自動フォーカスを指定 -->
       <!-- autocomplete:は候補の単語を表示 -->
 
       <div class="field">
-        <%= f.label :first_name, "名" %><br />
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :family_name_kana, "セイ" %><br />
-        <%= f.text_field :family_name_kana, autofocus: true, autocomplete: "family_name_kana" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :first_name_kana, "メイ" %><br />
-        <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
-      </div>
-
-      <div class="field">
         <%= f.label :telephone_number, "電話番号" %><br />
         <%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number" %>
       </div>
-
-      <div class="field">
-        <%= f.label :postal_code, "郵便番号" %><br />
-        <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :address, "住所" %><br />
-        <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
-      </div>
+      <!-- deviseにフォームを追加するには、application/controllerに記入 -->
 
       <div class="field">
         <%= f.label :email %><br />
@@ -68,6 +43,5 @@
 
       <%= render "devise/shared/links" %>
     </div>
-    <div class="col-sm-2"></div>
   </div>
 </div>

@@ -1,0 +1,187 @@
+<div class="container min-height">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+			<% if current_user.id != @user.id %>
+				<h1><%= @user.name%></h1>
+			<% else %>
+				<h1>マイページ</h1>
+			<% end %>
+			<div>
+ 				<ul id="tab-menu" class="clearfix">
+					<li><a href="#tab1" class="active">お気に入りリスト</a></li>
+					<li><a href="#tab2">ユーザー情報</a></li>
+					<li><a href="#tab3">フォローリスト</a></li>
+					<% if current_user.id == @user.id %>
+						<li><a href="#tab4">保存リスト</a></li>
+						<li><%= link_to '新規追加', new_users_restaurant_path %></li>
+					<% end %>
+ 				</ul>
+ 
+
+				<div id="tab-contents" class="clearfix">
+					<div id="tab1" class="tab">
+	 					<h2><%= @user.name %>のお気に入りリスト</h2>
+	 					<div class="search">
+	 						<%= search_form_for(@q, url: users_user_path(@user.id)) do |f| %>
+  							<%= f.label :name_or_address, "名前、住所で検索" %>
+  							<%= f.search_field :name_or_address_cont %>
+  							<%= f.submit "検索" %>
+	 						<% end %>
+	 					</div>
+
+	 					<% @user.favorites.each do |favorite| %>
+							<div class="restaurant">
+								<h3><%= link_to favorite.restaurant.name, users_restaurant_path(favorite.restaurant.id) %></h3>
+								<%= attachment_image_tag favorite.restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
+								<table class="table-bordered">
+			 					 <tbody>
+									<tr>
+										<td>最寄り駅：</td>
+										<td><%= favorite.restaurant.station.name %></td>
+										<td>予算：</td>
+										<td>￥<%= favorite.restaurant.budget %></td>
+									</tr>
+									<tr>
+										<td>ジャンル：</td>
+										<td><%= favorite.restaurant.genre.name %></td>
+									</tr>
+								 </tbody>
+								</table>
+								<table>
+								 <tbody>
+									<tr>
+										<td>この商品のお気に入り数：<%= favorite.restaurant.favorites.count %></td>
+									</tr>
+									<tr>
+										<td>この商品を保存した人たち：<%= favorite.restaurant.stocks.count %></td>
+									</tr>
+			 					 </tbody>
+								</table>
+								<%= link_to "この店の詳細へ", users_restaurant_path(favorite.restaurant.id) %>
+							</div>
+						<% end %>
+					</div>
+	
+
+					<div id="tab2" class="tab">
+	 					<h2>ユーザー情報</h2>
+	 					<div class="userbox clearfix">
+	 						<div class="user-image">
+								<%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'100x100' %>
+							</div>
+							<div class="box-right">
+								<table>
+								 <tbody>
+									<tr>
+										<th>名前</th>
+										<td><%= @user.name %></td>
+									</tr>
+									<tr>
+										<% if current_user.id == @user.id %>
+										<th>E-mail：</th>
+										<td><%= @user.email %></td>
+										<% end %>
+									</tr>
+							 	 </tbody>
+								</table>
+								<div class="introduction">
+									<p>自己紹介：</p>
+									<p><%= @user.introduction %></p>
+								</div>
+							</div>
+						</div>
+
+
+	 					<div>
+	 						<% if current_user.id == @user.id %>
+								<%= link_to 'ユーザー編集', edit_users_user_path(@user.id), class: "btn btn-success col-md-4" %>
+							<% end %>
+							<% if user_signed_in? %> 
+								<% unless current_user.id == @user.id %>
+		 							<% if current_user.following?(@user) %>
+    								<%= form_for(current_user.relationships.find_by(follow_id: @user.id), html: { method: :delete }, url: users_relationship_path(@user)) do |f| %>
+    								<!-- 下記はfollow_idのユーザーidを取り出したいが、user.idで出来ないため、@idを定義して指定した。 -->
+			 								<%= hidden_field_tag :follow_id, @id %>
+    	 								<%= f.submit 'フォローを解除', class: 'btn btn-danger col-md-3' %>
+    								<% end %>
+	 								<% else %>
+   									<%= form_for(current_user.relationships.build, url: users_relationships_path) do |f| %>
+    		 							<%= hidden_field_tag :follow_id, @user.id %>
+    		 							<%= f.submit 'フォローする', class: 'btn btn-primary col-md-3' %>
+    		 							<!-- submitは二重送信を禁止している。 -->
+    								<% end %>
+		 							<% end %>
+								<% end %>
+							<% end %>
+	 					</div>
+					</div>
+
+
+					<div id="tab3" class="tab">
+						<h2><%= @user.name %>のフォローリスト</h2>
+						<% @followers.each do |follower| %>
+							<div class="userbox clearfix">
+		 						<div class="user-image">
+									<%= attachment_image_tag follower, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
+			 					</div>
+	 		 					<div class="box-right">
+									<p>名前：<%= link_to follower.name, users_user_path(follower) %></p>
+									<p>自己紹介：</p>
+									<p><%= follower.introduction %></p>
+									<% unless current_user.id == follower.id %>
+			 							<% if current_user.following?(follower) %>
+											<%= form_for(follower, html: { method: :delete }, url: users_relationship_path(follower)) do |f| %>
+												<%= hidden_field_tag :follow_id, follower.id %>
+    			 							<%= f.submit 'フォローを解除', class: 'btn btn-danger btn-block' %>
+    									<% end %>
+			 							<% end %>
+									<% end %>
+		 						</div>
+							</div>
+						<% end %>
+					</div>
+
+					<div id="tab4" class="tab">
+						<h2>あなたの保存済みリスト</h2>
+						<%= search_form_for(@q, url: users_user_path(@user.id)) do |f| %>
+  						<%= f.label :name_or_address, "名前、住所で検索" %>
+  						<%= f.search_field :name_or_address_cont %>
+ 							<%= f.submit "検索" %>
+	 					<% end %>
+						<% @user.stocks.each do |stock| %>
+		 					<div class="restaurant">
+								<h3><%= link_to stock.restaurant.name, users_restaurant_path(stock.restaurant.id) %></h3>
+								<%= attachment_image_tag stock.restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
+								<table class="table-bordered">
+								 <tbody>
+									<tr>
+										<td>最寄り駅：</td>
+										<td><%= stock.restaurant.station.name %></td>
+										<td>予算：</td>
+										<td>￥<%= stock.restaurant.budget %></td>
+									</tr>
+									<tr>
+										<td>ジャンル：</td>
+										<td><%= stock.restaurant.genre.name %></td>
+									</tr>
+								 </tbody>
+								</table>
+								<table>
+								 <tbody>
+									<tr>
+										<td>この商品のお気に入り数：<%= stock.restaurant.favorites.count %></td>
+									</tr>
+									<tr>
+										<td>この商品をストックした人たち：<%= stock.restaurant.stocks.count %></td>
+									</tr>
+		 						 </tbody>
+								</table>
+								<%= link_to "この店の詳細へ", users_restaurant_path(stock.restaurant.id) %>
+							</div>
+						<% end %>
+					</div><!-- tab4 -->
+ 				</div><!-- tab-content -->
+			</div>
+		</div>
+	</div>
+</div>

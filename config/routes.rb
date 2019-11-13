@@ -1,24 +1,29 @@
 Rails.application.routes.draw do
-	root "users/restaurants#index"
-	devise_for :users
+  devise_for :admins, controllers: {
+      sessions:      'admins/sessions',
+      passwords:     'admins/passwords',
+      registrations: 'admins/registrations'
+    }
+  root "users/restaurants#index"
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :users do
   	resources :restaurants
-  	resources :users, only:[:show, :edit, :update]
+  	resources :users, only:[:show, :edit, :update, :destroy]
   	#resourcesにないアクションだからそのまま書いた。
   	get '/users/:id/withdrawal', to: 'users#withdrawal'
-  	patch '/users/:id/withdrawal', to: 'users#quit'
   	resources :favorites, only:[:create, :destroy]
-  	resources :relationships, only:[:create, :destroy, :index]
-  	resources :stations, only:[:index]
-  	resources :tags, only:[:new, :create, :destroy, :update]
-  	#tagsのupdateいる？
+    resources :stocks, only:[:create, :destroy]
+  	resources :relationships, only:[:create, :destroy]
+  	resources :stations, only:[:show]
   end
 
   namespace :admins do
-  	resources :stations, except:[:destroy]
-  	resources :users, only:[:index, :show, :destroy,]
-  	#usersのdestroyいるか？
-  	#quitのアクションどう指定しようか？
+    root "admins#home"
+
+   	resources :stations, except:[:destroy]
+   	resources :users, only:[:index, :show]
+    resources :genres
+   	#usersのdestroyいるか？
   end
 end

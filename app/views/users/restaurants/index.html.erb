@@ -1,7 +1,65 @@
-<%= link_to 'ログイン', new_user_session_path %>
 
-<% if user_signed_in? %>
-	<p>ログイン中...</p>
-<% else %>
-	<p>ログインしてない</p>
+<h1>あなたのお気に入りをStockGourmetで共有しよう。</h1>
+<h2>StockGourmet(ストックグルメ)</h2>
+<div class="">
+	<h2>全国の人気エリア</h2>
+	<div>
+		<table>
+			<tbody>
+				<% @stations.each do |station| %>
+					<td><%= link_to station.name, users_station_path(station.id) %></td>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<%= search_form_for(@q, url: root_path) do |f| %>
+  <%= f.label :name_or_address, "名前、住所で検索" %>
+  <%= f.search_field :name_or_address_cont %>
+  <%= f.submit "検索" %>
 <% end %>
+
+	 	<%= search_form_for(@q, url: root_path) do |f| %>
+  		<%= f.label :name, "最寄り駅で検索" %>
+  		<%= f.search_field :name_cont %>
+  		<%= f.submit "検索" %>
+	 	<% end %>
+
+<div>
+	<h2>the best お気に入りトップ10</h2>
+	 <% @all_ranks.each.with_index(1) do |restaurant, i| %>
+		<div>
+			<h3>第<%= i %>位<%= link_to restaurant.name, users_restaurant_path(restaurant.id) %></h3>
+			<%= attachment_image_tag restaurant, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
+			<table>
+			 <tbody>
+				<tr>
+					<td>最寄り駅：</td>
+					<td><%= restaurant.station.name %></td>
+					<td>予算：</td>
+					<td>￥<%= restaurant.budget %></td>
+				</tr>
+				<tr>
+					<td>ジャンル：</td>
+					<td><%= restaurant.genre.name %></td>
+				</tr>
+			 </tbody>
+			</table>
+			<p>〒<%= restaurant.postal_code %> <%= restaurant.address %></p>
+			<table>
+			 <tbody>
+				<tr>
+					<td>この商品のお気に入り数：<%= restaurant.favorites.count %></td>
+				</tr>
+				<tr>
+					<td>
+						この商品をストックした人たち：<%= restaurant.stocks.count %>
+					</td>
+				</tr>
+			 	</tbody>
+			</table>
+		</div>
+	<% end %>
+</div>
+

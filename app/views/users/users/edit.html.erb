@@ -1,0 +1,42 @@
+<div class="container min-height">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3"> 
+	   <h2><%= @user.name %>の編集画面</h2>
+        <%= form_for(@user, url: users_user_path(@user.id)) do |f| %>
+
+         <div class="field">
+            <%= f.label :name, "アカウント名" %><br />
+            <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+         </div>
+            <!-- autofocus: trueは自動フォーカスを指定 -->
+            <!-- autocomplete:は候補の単語を表示 -->
+
+         <div class="field">
+            <%= f.label :telephone_number, "電話番号" %><br />
+            <%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number" %>
+         </div>
+
+        <div class="field">
+            <%= f.label :email, "emailアドレス" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :introduction, "自己紹介" %><br />
+            <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction" %>
+        </div>
+
+        <div class="field">
+            <%= f.label :image, "プロフィール画像" %><br />
+            <%= f.attachment_field :image %>
+            <%= attachment_image_tag @user, :image, :fill, 200, 200, format: 'jpeg', fallback: "no_image.jpg", size:'150x150' %>
+        </div>
+
+        <div class="actions">
+            <%= f.submit "更新" %>
+            <%= link_to '戻る', users_user_path(@user.id) %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>

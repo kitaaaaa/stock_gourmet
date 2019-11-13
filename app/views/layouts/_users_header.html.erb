@@ -1,16 +1,13 @@
-<div class="navbar navbar-default hero" style="width: 100%;">
-  <nav class="container" >
-    <div class="container-fluid">
+<div class="navbar navbar-default hero" style="width: 100%; background-color: orange; margin-bottom: 30px;">
+  <nav class="container">
+    <div class="container-fluid clearfix">
       <div class="navbar-header">
         <%= link_to 'stock gourmet', root_path, class: "navbar-brand active",id: "top" %>
       </div>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right clearfix" style="float: right;">
         <% if user_signed_in? %>
             <li>
-              <%= link_to 'マイページ', root_path %>
-            </li>
-            <li>
-              <%= link_to '人気スポット', users_stations_path %>
+              <%= link_to 'マイページ', users_user_path(current_user.id) %>
             </li>
             <li>
               <%= link_to '使い方', root_path %>
@@ -20,27 +17,18 @@
             </li> 
         <% else %>
             <li>
-              <%= link_to 'マイページ', root_path %>
+              <%= link_to '新規登録', new_user_registration_path %>
             </li>
             <li>
-              <%= link_to '人気スポット', users_stations_path %>
+              <%= link_to 'マイページ', new_user_session_path %>
             </li>
             <li>
               <%= link_to '使い方', root_path %>
-            </li>
-            <li>
-              <%= link_to '新規登録', new_user_registration_path %>
             </li>
             <li>
               <%= link_to 'ログイン', new_user_session_path %>
             </li>
         <% end %>
       </ul>
-        <%= form_tag root_path, method: :get, class: "navbar-form navbar-left" do %>
-          <div class="form-group">
-            <%= text_field_tag "q","", placeholder: "検索", class: "form-control" %>
-          </div>
-          <%= submit_tag "検索", class: "btn btn-default" %>
-        <% end %>
   </nav>
 </div>

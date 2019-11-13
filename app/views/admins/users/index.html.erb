@@ -1,0 +1,6 @@
+<h1>ユーザー一覧</h1>
+<% @users.each do |user| %>
+	<p><%= link_to user.name, admins_user_path(user.id) %></p>
+	<p><%= user.email %></p>
+	<p><%= user.telephone_number %></p>
+<% end %>
