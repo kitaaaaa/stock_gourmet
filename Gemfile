@@ -14,6 +14,7 @@ gem 'puma', '~> 3.11'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'jquery-rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -85,8 +86,8 @@ gem 'ransack'
 #検索用
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-# Windows環境ではtzinfo-dataというgemを含める必要があります
 
 gem 'json'
 gem 'mysql2'
 gem 'listen', '>= 3.0.5', '< 3.2'
+
